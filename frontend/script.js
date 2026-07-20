@@ -1,101 +1,6 @@
 const API_URL = "http://localhost:5000/api";
 
-/* ============================================================
-   JAVASCRIPT — HESTIIA RESTAURANT
-   Premium Fine Dining Website
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
-  // ─── RAZORPAY CONFIG ──────────────────────────────────────
-  // Replace with your actual Razorpay key ID from dashboard
-  const RAZORPAY_KEY = "rzp_test_YourKeyHere";
-
-  // ─── PRELOADER ──────────────────────────────────────────
-  let prog = 0;
-  const preloader = document.getElementById("preloader");
-  const bar = document.getElementById("preloaderBar");
-
-  function loadSim() {
-    const interval = setInterval(() => {
-      prog += Math.random() * 7 + 2;
-      if (prog >= 100) {
-        prog = 100;
-        clearInterval(interval);
-        setTimeout(() => {
-          preloader.classList.add("hidden");
-          document.body.style.overflow = "auto";
-        }, 500);
-      }
-      bar.style.width = prog + "%";
-    }, 120);
-  }
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      if (!preloader.classList.contains("hidden")) {
-        prog = 100;
-        bar.style.width = "100%";
-        setTimeout(() => {
-          preloader.classList.add("hidden");
-          document.body.style.overflow = "auto";
-        }, 500);
-      }
-    }, 800);
-  });
-  loadSim();
-
-  // ─── CUSTOM CURSOR ──────────────────────────────────────
-  const glow = document.getElementById("cursorGlow");
-  const dot = document.getElementById("cursorDot");
-  let mouseX = 0,
-    mouseY = 0;
-  let glowX = 0,
-    glowY = 0;
-
-  if (window.matchMedia("(hover: hover)").matches) {
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dot.style.opacity = "1";
-      glow.style.opacity = "1";
-      dot.style.left = mouseX + "px";
-      dot.style.top = mouseY + "px";
-    });
-
-    function animateGlow() {
-      glowX += (mouseX - glowX) * 0.08;
-      glowY += (mouseY - glowY) * 0.08;
-      glow.style.left = glowX + "px";
-      glow.style.top = glowY + "px";
-      requestAnimationFrame(animateGlow);
-    }
-    animateGlow();
-
-    document.addEventListener("mouseleave", () => {
-      dot.style.opacity = "0";
-      glow.style.opacity = "0";
-    });
-
-    document
-      .querySelectorAll(
-        "a, button, .menu-item, .event-card, .venue-card, .team-card",
-      )
-      .forEach((el) => {
-        el.addEventListener("mouseenter", () => {
-          glow.style.width = "400px";
-          glow.style.height = "400px";
-          dot.style.width = "10px";
-          dot.style.height = "10px";
-        });
-        el.addEventListener("mouseleave", () => {
-          glow.style.width = "300px";
-          glow.style.height = "300px";
-          dot.style.width = "6px";
-          dot.style.height = "6px";
-        });
-      });
-  }
-
   // ─── LENIS SMOOTH SCROLL ──────────────────────────────
   const lenis = new Lenis({
     duration: 1.2,
@@ -111,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const progress = (e.animatedScroll / max) * 100;
     document.getElementById("scrollProgress").style.width = progress + "%";
     const navbar = document.getElementById("navbar");
+    // Add scrolled class for visual effect, but navbar stays visible
     if (e.animatedScroll > 40) {
       navbar.classList.add("scrolled");
     } else {
@@ -133,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // ─── GSAP + SCROLLTRIGGER ──────────────────────────────
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-  // Hero social sidebar animation
   gsap.from(".hero-social-sidebar", {
     duration: 1,
     x: -30,
@@ -142,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
     delay: 0.8,
   });
 
-  // Hero buttons animation
   gsap.from(".hero-buttons", {
     duration: 0.8,
     y: 40,
@@ -151,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
     delay: 0.5,
   });
 
-  // Scroll reveal animations
   ScrollTrigger.batch(".reveal-scale", {
     onEnter: (elements) => {
       gsap.to(elements, {
@@ -196,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ─── HERO SLIDER ──────────────────────────────────────────
   function initHeroSlider() {
-    const slides = document.querySelectorAll(".hero-slide");
+    const slides = document.querySelectorAll(".hero-slide-img");
     if (!slides.length) return;
     let current = 0;
 
@@ -211,18 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
       showSlide(current);
     }
 
-    // Set initial active state
     showSlide(0);
+    // 2-second interval
+    let interval = setInterval(nextSlide, 2000);
 
-    // Start autoplay
-    let interval = setInterval(nextSlide, 3000);
-
-    // Pause on hover
-    const slider = document.getElementById("heroSlider");
-    if (slider) {
-      slider.addEventListener("mouseenter", () => clearInterval(interval));
-      slider.addEventListener("mouseleave", () => {
-        interval = setInterval(nextSlide, 3000);
+    const container = document.getElementById("heroSliderContainer");
+    if (container) {
+      container.addEventListener("mouseenter", () => clearInterval(interval));
+      container.addEventListener("mouseleave", () => {
+        interval = setInterval(nextSlide, 2000);
       });
     }
   }
@@ -287,14 +187,15 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.style.display = "flex";
       navLinks.style.flexDirection = "column";
       navLinks.style.position = "absolute";
-      navLinks.style.top = "60px";
+      navLinks.style.top = "50px";
       navLinks.style.left = "0";
       navLinks.style.right = "0";
-      navLinks.style.background = "rgba(10,10,10,0.96)";
+      navLinks.style.background = "rgba(26,26,26,0.96)";
       navLinks.style.backdropFilter = "blur(24px)";
-      navLinks.style.padding = "24px 24px 30px";
-      navLinks.style.gap = "14px";
-      navLinks.style.borderBottom = "1px solid rgba(255,255,255,0.04)";
+      navLinks.style.padding = "20px 24px 24px";
+      navLinks.style.gap = "12px";
+      navLinks.style.borderRadius = "16px";
+      navLinks.style.marginTop = "12px";
       navLinks.style.zIndex = "999";
       navLinks.querySelectorAll(".dropdown").forEach((d) => {
         d.style.position = "relative";
@@ -305,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
         d.style.visibility = "visible";
         d.style.boxShadow = "none";
         d.style.background = "transparent";
-        d.style.padding = "6px 0 6px 20px";
+        d.style.padding = "4px 0 4px 16px";
         d.style.border = "none";
       });
       spans[0].style.transform = "rotate(45deg) translate(4px,4px)";
@@ -323,7 +224,8 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.style.backdropFilter = "";
       navLinks.style.padding = "";
       navLinks.style.gap = "";
-      navLinks.style.borderBottom = "";
+      navLinks.style.borderRadius = "";
+      navLinks.style.marginTop = "";
       navLinks.style.zIndex = "";
       navLinks.querySelectorAll(".dropdown").forEach((d) => {
         d.style.position = "";
@@ -473,6 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ─── RAZORPAY CHECKOUT ──────────────────────────────────
+  const RAZORPAY_KEY = "rzp_test_YourKeyHere";
   document.getElementById("checkoutBtn").addEventListener("click", function () {
     if (cart.length === 0) {
       showToast("Your cart is empty!", "error");
@@ -519,7 +422,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .map((item) => `${item.name} × ${item.qty}`)
             .join(", "),
         },
-        theme: { color: "#C9A84C" },
+        theme: { color: "#8B1A1A" },
         handler: async function (response) {
           const orderId = "ORD-" + Date.now();
           const orderData = {
@@ -558,16 +461,14 @@ document.addEventListener("DOMContentLoaded", function () {
           cartPanel.classList.remove("open");
           document.getElementById("checkoutOverlay").style.display = "none";
 
-          const waMsg =
+          sendWhatsApp(
             `🆕 *New Order Placed!*\n\n` +
-            `🆔 Order ID: ${orderId}\n` +
-            `📦 Items:\n${orderData.items.map((i) => `  • ${i.name} × ${i.qty} = ₹${i.price * i.qty}`).join("\n")}\n` +
-            `💰 Total: ₹${total}\n` +
-            `💳 Payment ID: ${response.razorpay_payment_id}\n` +
-            `📅 Date: ${new Date().toLocaleString()}`;
-
-          const waUrl = `https://wa.me/916392693457?text=${encodeURIComponent(waMsg)}`;
-          window.open(waUrl, "_blank");
+              `🆔 Order ID: ${orderId}\n` +
+              `📦 Items:\n${orderData.items.map((i) => `  • ${i.name} × ${i.qty} = ₹${i.price * i.qty}`).join("\n")}\n` +
+              `💰 Total: ₹${total}\n` +
+              `💳 Payment ID: ${response.razorpay_payment_id}\n` +
+              `📅 Date: ${new Date().toLocaleString()}`,
+          );
 
           showToast(`✅ Order placed successfully! Order ID: ${orderId}`);
         },
@@ -580,6 +481,133 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const rzp = new Razorpay(options);
       rzp.open();
+    });
+
+  // ─── WHATSAPP / EMAIL NOTIFICATION HELPERS ──────────────
+  function sendWhatsApp(message) {
+    const waUrl = `https://wa.me/916392693457?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  }
+
+  function sendEmail(subject, body) {
+    const mailtoUrl = `mailto:info@hestiia.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoUrl, "_blank");
+  }
+
+  window.sendOrderNotification = function (platform) {
+    const msg = `🍽️ *Order Notification*\n\nPlatform: ${platform}\nCustomer wants to order from HESTIIA.\nPlease check the platform for details.`;
+    sendWhatsApp(msg);
+    sendEmail(`Order - ${platform}`, msg);
+    showToast(`✓ Order notification sent to owner via WhatsApp & Email!`);
+    if (platform === "Zomato") {
+      window.open("https://www.zomato.com/kanpur", "_blank");
+    } else {
+      window.open("https://www.swiggy.com/", "_blank");
+    }
+  };
+
+  // ─── RESERVATION FORM ──────────────────────────────────
+  document
+    .getElementById("reservationForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("resName").value.trim();
+      const email = document.getElementById("resEmail").value.trim();
+      const phone = document.getElementById("resPhone").value.trim();
+      const date = document.getElementById("resDate").value;
+      const time = document.getElementById("resTime").value;
+      const guests = document.getElementById("resGuests").value;
+      const requests = document.getElementById("resRequests").value.trim();
+
+      if (!name || !email || !phone || !date) {
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      const msg =
+        `🍽️ *New Table Reservation*\n\n` +
+        `👤 Name: ${name}\n` +
+        `📧 Email: ${email}\n` +
+        `📞 Phone: ${phone}\n` +
+        `📅 Date: ${date}\n` +
+        `🕐 Time: ${time}\n` +
+        `👥 Guests: ${guests}\n` +
+        `📝 Requests: ${requests || "None"}`;
+
+      sendWhatsApp(msg);
+      sendEmail(`Table Reservation - ${name}`, msg);
+
+      document.getElementById("resSuccess").classList.add("show");
+      this.querySelector(".btn-reserve").textContent = "✓ Sent!";
+      this.reset();
+      setTimeout(() => {
+        document.getElementById("resSuccess").classList.remove("show");
+        this.querySelector(".btn-reserve").textContent = "Reserve Table";
+      }, 3000);
+    });
+
+  // ─── INQUIRY FORM ──────────────────────────────────────
+  document
+    .getElementById("inquiryForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("inqName").value.trim();
+      const email = document.getElementById("inqEmail").value.trim();
+      const phone = document.getElementById("inqPhone").value.trim();
+      const age = document.getElementById("inqAge").value;
+      const designation = document.getElementById("inqDesignation").value;
+      const pincode = document.getElementById("inqPincode").value;
+      const company = document.getElementById("inqCompany").value;
+      const address = document.getElementById("inqAddress").value;
+      const message = document.getElementById("inqMessage").value.trim();
+
+      if (!name || !email) {
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      const msg =
+        `👑 *Membership Inquiry*\n\n` +
+        `👤 Name: ${name}\n` +
+        `📧 Email: ${email}\n` +
+        `📞 Phone: ${phone || "N/A"}\n` +
+        `📅 Age: ${age || "N/A"}\n` +
+        `💼 Designation: ${designation || "N/A"}\n` +
+        `🏢 Company: ${company || "N/A"}\n` +
+        `📍 Address: ${address || "N/A"}\n` +
+        `📮 Pincode: ${pincode || "N/A"}\n` +
+        `📝 Message: ${message || "None"}`;
+
+      sendWhatsApp(msg);
+      sendEmail(`Membership Inquiry - ${name}`, msg);
+
+      document.getElementById("inqSuccess").classList.add("show");
+      this.querySelector(".btn-submit").textContent = "✓ Sent!";
+      this.reset();
+      setTimeout(() => {
+        document.getElementById("inqSuccess").classList.remove("show");
+        this.querySelector(".btn-submit").textContent = "Send Your Message";
+      }, 3000);
+    });
+
+  // ─── NEWSLETTER ──────────────────────────────────────────
+  document
+    .getElementById("footerNewsletterBtn")
+    .addEventListener("click", function () {
+      const input = document.getElementById("footerNewsletter");
+      if (input.value.trim() && input.value.includes("@")) {
+        const msg = `📧 *Newsletter Subscription*\n\nEmail: ${input.value.trim()}`;
+        sendWhatsApp(msg);
+        sendEmail("Newsletter Subscription", msg);
+        alert(
+          "✓ Thank you for subscribing! Get 25% off on your first order. (T&C apply)",
+        );
+        input.value = "";
+      } else {
+        alert("Please enter a valid email address.");
+      }
     });
 
   // ─── MENU DATA & RENDER ─────────────────────────────────
@@ -767,17 +795,17 @@ document.addEventListener("DOMContentLoaded", function () {
       .map(
         (item) => `
                 <div class="menu-item">
-                    <div class="thumb">
-                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=100&q=80" alt="${item.name}" loading="lazy" />
-                    </div>
-                    <div class="info">
-                        <h5>${item.name}</h5>
-                        <div class="meta">${item.desc} <span>•</span> ${item.category}</div>
-                    </div>
-                    <div class="price-tag">₹${item.price}</div>
-                    <button class="add-cart-btn" data-name="${item.name}" data-price="${item.price}">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                  <div class="thumb">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=100&q=80" alt="${item.name}" loading="lazy" />
+                  </div>
+                  <div class="info">
+                    <h5>${item.name}</h5>
+                    <div class="meta">${item.desc} <span>•</span> ${item.category}</div>
+                  </div>
+                  <div class="price-tag">₹${item.price}</div>
+                  <button class="add-cart-btn" data-name="${item.name}" data-price="${item.price}">
+                    <i class="fas fa-plus"></i>
+                  </button>
                 </div>
               `,
       )
@@ -794,108 +822,6 @@ document.addEventListener("DOMContentLoaded", function () {
       renderMenu(this.dataset.category);
     });
   });
-
-  // ─── NEWSLETTER ──────────────────────────────────────────
-  document
-    .getElementById("footerNewsletterBtn")
-    .addEventListener("click", function () {
-      const input = document.getElementById("footerNewsletter");
-      if (input.value.trim() && input.value.includes("@")) {
-        alert(
-          "✓ Thank you for subscribing! Get 25% off on your first order. (T&C apply)",
-        );
-        input.value = "";
-      } else {
-        alert("Please enter a valid email address.");
-      }
-    });
-
-  // ─── INQUIRY FORM ──────────────────────────────────────
-  document
-    .getElementById("inquiryForm")
-    .addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const data = {
-        name: document.getElementById("inqName").value.trim(),
-        email: document.getElementById("inqEmail").value.trim(),
-        phone: document.getElementById("inqPhone").value.trim(),
-        age: document.getElementById("inqAge").value,
-        designation: document.getElementById("inqDesignation").value,
-        pincode: document.getElementById("inqPincode").value,
-        company: document.getElementById("inqCompany").value,
-        address: document.getElementById("inqAddress").value,
-        message: document.getElementById("inqMessage").value,
-      };
-
-      if (!data.name || !data.email) {
-        alert("Please fill all required fields.");
-        return;
-      }
-
-      try {
-        const res = await fetch(`${API_URL}/contact`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-        const result = await res.json();
-        if (result.success) {
-          document.getElementById("inqSuccess").classList.add("show");
-          this.querySelector(".btn-submit").textContent = "✓ Sent!";
-          this.reset();
-          setTimeout(() => {
-            document.getElementById("inqSuccess").classList.remove("show");
-            this.querySelector(".btn-submit").textContent = "Send Your Message";
-          }, 3000);
-        } else {
-          alert(result.message);
-        }
-      } catch (err) {
-        console.error(err);
-        alert("Server Error");
-      }
-    });
-
-  // ─── RESERVATION FORM ──────────────────────────────────
-  document
-    .getElementById("reservationForm")
-    .addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const data = {
-        name: document.getElementById("resName").value.trim(),
-        email: document.getElementById("resEmail").value.trim(),
-        phone: document.getElementById("resPhone").value.trim(),
-        guests: parseInt(document.getElementById("resGuests").value),
-        booking_date: document.getElementById("resDate").value,
-        booking_time: document.getElementById("resTime").value,
-        message: document.getElementById("resRequests").value,
-      };
-
-      try {
-        const res = await fetch(`${API_URL}/reservations`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-        const result = await res.json();
-        if (result.success) {
-          document.getElementById("resSuccess").classList.add("show");
-          this.querySelector(".btn-reserve").textContent = "✓ Reserved!";
-          this.querySelector(".btn-reserve").style.background = "#0F8B6D";
-          this.reset();
-          setTimeout(() => {
-            document.getElementById("resSuccess").classList.remove("show");
-            this.querySelector(".btn-reserve").textContent = "Reserve Table";
-            this.querySelector(".btn-reserve").style.background = "";
-          }, 3000);
-        } else {
-          alert(result.message);
-        }
-      } catch (err) {
-        console.error(err);
-        alert("Server Error");
-      }
-    });
 
   // ─── AI CHATBOT ──────────────────────────────────────────
   const chatToggle = document.getElementById("chatToggle");
@@ -943,7 +869,7 @@ document.addEventListener("DOMContentLoaded", function () {
           break;
         case "membership":
           response =
-            '👑 For membership inquiries, please visit our <a href="#" onclick="navigateTo(\'inquiry\'); chatWidget.classList.remove(\'open\');" style="color:var(--gold);">Inquiry page</a> or contact +91 9999980721.';
+            '👑 For membership inquiries, please visit our <a href="#" onclick="navigateTo(\'inquiry\'); chatWidget.classList.remove(\'open\');" style="color:var(--gold);">Inquiry page</a> or contact +91 6392693457.';
           waMsg = "Hello HESTIIA, I am interested in your membership program.";
           break;
         default:
@@ -1052,5 +978,5 @@ document.addEventListener("DOMContentLoaded", function () {
     "📍 Map Location: 1-b, Ram Puram, Shyam Nagar, Kanpur, UP 208013",
   );
   console.log("🛒 Cart System with Razorpay Payment Integration");
-  console.log("🔑 Razorpay Key: " + RAZORPAY_KEY);
+  console.log("📱 All notifications sent to WhatsApp + Email");
 });
