@@ -74,11 +74,11 @@
       }
     </script>
 
-    <!-- Fonts -->
+    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -107,21 +107,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ===== PRELOADER ===== -->
-    <div id="preloader" role="status" aria-label="Loading">
-      <div class="preloader-logo">
-        <img src="images/logo.png" alt="HESTIIA" />
-      </div>
-      <div class="preloader-sub">Pure Veg · Fine Dining</div>
-      <div class="preloader-bar-wrap">
-        <div class="preloader-bar" id="preloaderBar"></div>
-      </div>
-    </div>
-
-    <!-- ===== CUSTOM CURSOR ===== -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <div class="cursor-dot" id="cursorDot"></div>
-
     <!-- ===== POPUP BOOKING ===== -->
     <div
       class="popup-overlay"
@@ -143,7 +128,7 @@
           <i class="fas fa-crown" aria-hidden="true"></i>
         </div>
         <h3>Book a Table</h3>
-        <p class="sub">Reserve your experience at Hastiia</p>
+        <p class="sub">Reserve your experience at Hestiia</p>
         <div class="popup-details">
           <div class="detail-item">
             <i class="fas fa-map-pin" aria-hidden="true"></i>
@@ -372,7 +357,7 @@
       </div>
     </div>
 
-    <!-- ===== NAVBAR (Glassmorphism) ===== -->
+    <!-- ===== NAVBAR (Glassmorphism - Stays Visible) ===== -->
     <nav class="navbar" id="navbar" aria-label="Main navigation">
       <a
         href="#"
@@ -387,82 +372,92 @@
         />
       </a>
 
-      <ul class="nav-links" role="menubar">
-        <li role="none">
-          <a
-            role="menuitem"
-            class="active"
-            data-page="home"
-            onclick="navigateTo('home')"
-            >Home</a
-          >
-        </li>
-        <li role="none">
-          <a role="menuitem" data-page="about" onclick="navigateTo('about')"
-            >About</a
-          >
-        </li>
-        <li role="none" class="has-dropdown">
-          <a role="menuitem" data-page="venue" onclick="navigateTo('venue')"
-            >Venue
-            <i
-              class="fas fa-chevron-down"
-              style="font-size: 0.5rem; margin-left: 4px"
-              aria-hidden="true"
-            ></i
-          ></a>
-          <div class="dropdown" role="menu">
-            <a role="menuitem" onclick="navigateTo('venue')">All Venues</a>
-            <a role="menuitem" onclick="navigateTo('venue')">Private Dining</a>
-            <a role="menuitem" onclick="navigateTo('venue')"
-              >Birthday Parties</a
+      <div class="nav-links-wrap">
+        <ul class="nav-links" role="menubar">
+          <li role="none">
+            <a
+              role="menuitem"
+              class="active"
+              data-page="home"
+              onclick="navigateTo('home')"
+              >Home</a
             >
-            <a role="menuitem" onclick="navigateTo('venue')"
-              >Anniversary Parties</a
+          </li>
+          <li role="none">
+            <a role="menuitem" data-page="about" onclick="navigateTo('about')"
+              >About</a
             >
-            <a role="menuitem" onclick="navigateTo('venue')">Party Hall</a>
-          </div>
-        </li>
-        <li role="none" class="has-dropdown">
-          <a role="menuitem" data-page="menu" onclick="navigateTo('menu')"
-            >Menu
-            <i
-              class="fas fa-chevron-down"
-              style="font-size: 0.5rem; margin-left: 4px"
-              aria-hidden="true"
-            ></i
-          ></a>
-          <div class="dropdown" role="menu">
-            <a role="menuitem" onclick="navigateTo('menu')">Full Menu</a>
-            <a role="menuitem" onclick="navigateTo('menu')">Specials</a>
-            <a role="menuitem" onclick="navigateTo('menu')">Seasonal</a>
-            <a role="menuitem" onclick="navigateTo('menu')">Drinks</a>
-          </div>
-        </li>
-        <li role="none">
-          <a role="menuitem" data-page="gallery" onclick="navigateTo('gallery')"
-            >Gallery</a
-          >
-        </li>
-        <li role="none">
-          <a role="menuitem" data-page="events" onclick="navigateTo('events')"
-            >Event</a
-          >
-        </li>
-        <li role="none">
-          <a
-            role="menuitem"
-            data-page="membership"
-            onclick="navigateTo('membership')"
-            >Membership</a
-          >
-        </li>
-        <li role="none">
-          <a role="menuitem" data-page="contact" onclick="navigateTo('contact')"
-            >Contact</a
-          >
-        </li>
-      </ul>
+          </li>
+          <li role="none" class="has-dropdown">
+            <a role="menuitem" data-page="venue" onclick="navigateTo('venue')"
+              >Venue
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.5rem; margin-left: 4px"
+                aria-hidden="true"
+              ></i
+            ></a>
+            <div class="dropdown" role="menu">
+              <a role="menuitem" onclick="navigateTo('venue')">All Venues</a>
+              <a role="menuitem" onclick="navigateTo('venue')"
+                >Private Dining</a
+              >
+              <a role="menuitem" onclick="navigateTo('venue')"
+                >Birthday Parties</a
+              >
+              <a role="menuitem" onclick="navigateTo('venue')"
+                >Anniversary Parties</a
+              >
+              <a role="menuitem" onclick="navigateTo('venue')">Party Hall</a>
+            </div>
+          </li>
+          <li role="none" class="has-dropdown">
+            <a role="menuitem" data-page="menu" onclick="navigateTo('menu')"
+              >Menu
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.5rem; margin-left: 4px"
+                aria-hidden="true"
+              ></i
+            ></a>
+            <div class="dropdown" role="menu">
+              <a role="menuitem" onclick="navigateTo('menu')">Full Menu</a>
+              <a role="menuitem" onclick="navigateTo('menu')">Specials</a>
+              <a role="menuitem" onclick="navigateTo('menu')">Seasonal</a>
+              <a role="menuitem" onclick="navigateTo('menu')">Drinks</a>
+            </div>
+          </li>
+          <li role="none">
+            <a
+              role="menuitem"
+              data-page="gallery"
+              onclick="navigateTo('gallery')"
+              >Gallery</a
+            >
+          </li>
+          <li role="none">
+            <a role="menuitem" data-page="events" onclick="navigateTo('events')"
+              >Event</a
+            >
+          </li>
+          <li role="none">
+            <a
+              role="menuitem"
+              data-page="membership"
+              onclick="navigateTo('membership')"
+              >Membership</a
+            >
+          </li>
+          <li role="none">
+            <a
+              role="menuitem"
+              data-page="contact"
+              onclick="navigateTo('contact')"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
 
       <div class="nav-actions">
         <button class="nav-btn" onclick="navigateTo('reservation')">
@@ -488,25 +483,37 @@
     PAGE: HOME
     ============================================================ -->
     <main class="page active" id="page-home">
-      <!-- Hero with Slideshow -->
+      <!-- Hero -->
       <section class="hero" id="hero" aria-label="Hero banner">
-        <div class="hero-slider" id="heroSlider">
-          <div
-            class="hero-slide active"
-            style="background-image: url(images/image\ 1.webp)"
-          ></div>
-          <div
-            class="hero-slide"
-            style="background-image: url(images/image\ 2.webp)"
-          ></div>
-          <div
-            class="hero-slide"
-            style="background-image: url(images/image\ 3.webp)"
-          ></div>
-          <div
-            class="hero-slide"
-            style="background-image: url(images/image\ 4.webp)"
-          ></div>
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source
+            src="https://cdn.coverr.co/videos/coverr-waiters-serving-dishes-at-a-restaurant-3976/1080p.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="hero-slider-overlay">
+          <div class="hero-slider-container" id="heroSliderContainer">
+            <img
+              class="hero-slide-img active"
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80"
+              alt="Restaurant interior"
+            />
+            <img
+              class="hero-slide-img"
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80"
+              alt="Food plating"
+            />
+            <img
+              class="hero-slide-img"
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
+              alt="Dining table"
+            />
+            <img
+              class="hero-slide-img"
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1600&q=80"
+              alt="Gourmet dish"
+            />
+          </div>
         </div>
         <div class="hero-overlay"></div>
         <div id="hero-particles"></div>
@@ -552,11 +559,9 @@
         aria-label="Instagram stories"
       >
         <div class="container">
-          <span class="section-label" style="color: #b8860b"
-            >✦ Instagram Stories</span
-          >
-          <h2 class="section-title" style="color: #1a1a1a">
-            Follow Us <span style="color: #b8860b">@hestiiarestaurant</span>
+          <span class="section-label">✦ Instagram Stories</span>
+          <h2 class="section-title">
+            Follow Us <span>@hestiiarestaurant</span>
           </h2>
           <div class="insta-stories">
             <div class="stories-track">
@@ -652,11 +657,9 @@
       <!-- Events Preview -->
       <section class="section events-section" aria-label="Upcoming events">
         <div class="container">
-          <span class="section-label" style="color: #ffd700">✦ Upcoming</span>
-          <h2 class="section-title" style="color: #ffffff">
-            Our <span style="color: #ffd700">Events</span>
-          </h2>
-          <p class="section-desc" style="color: rgba(255, 255, 255, 0.8)">
+          <span class="section-label">✦ Upcoming</span>
+          <h2 class="section-title">Our <span>Events</span></h2>
+          <p class="section-desc">
             Join us for exclusive dining experiences, wine tastings, and special
             celebrations.
           </p>
@@ -724,11 +727,9 @@
       <!-- Meet Our Experts -->
       <section class="section team-section" aria-label="Our team of experts">
         <div class="container">
-          <span class="section-label" style="color: #ffd700">✦ Team</span>
-          <h2 class="section-title" style="color: #ffffff">
-            Meet Our <span style="color: #ffd700">Experts</span>
-          </h2>
-          <p class="section-desc" style="color: rgba(255, 255, 255, 0.8)">
+          <span class="section-label">✦ Team</span>
+          <h2 class="section-title">Meet Our <span>Experts</span></h2>
+          <p class="section-desc">
             Passionate culinary artists dedicated to crafting extraordinary
             dining experiences.
           </p>
@@ -809,11 +810,9 @@
       <!-- Gallery Section -->
       <section class="section gallery-section" aria-label="Gallery">
         <div class="container">
-          <span class="section-label" style="color: #ffd700">✦ Gallery</span>
-          <h2 class="section-title" style="color: #ffffff">
-            Visual <span style="color: #ffd700">Storytelling</span>
-          </h2>
-          <p class="section-desc" style="color: rgba(255, 255, 255, 0.8)">
+          <span class="section-label">✦ Gallery</span>
+          <h2 class="section-title">Visual <span>Storytelling</span></h2>
+          <p class="section-desc">
             A glimpse into the artistry, ambiance, and emotion of HESTIIA.
           </p>
           <div class="gallery-grid" style="margin-top: 20px">
@@ -874,6 +873,40 @@
         </div>
       </section>
 
+      <!-- Order Online Section -->
+      <section class="order-section" aria-label="Order Online">
+        <div class="container">
+          <span class="section-label">✦ Order Online</span>
+          <h2 class="section-title" style="margin-bottom: 8px">
+            Get Your Favorite <span>Dishes</span> Delivered
+          </h2>
+          <p class="section-desc" style="margin: 0 auto 16px; max-width: 600px">
+            Order directly from your preferred platform and enjoy HESTIIA's
+            finest vegetarian cuisine at home.
+          </p>
+          <div class="order-logos">
+            <img src="images/zomato.png" alt="Zomato" loading="lazy" />
+            <img src="images/swiggy.png" alt="Swiggy" loading="lazy" />
+          </div>
+          <div class="order-platforms">
+            <a
+              href="#"
+              class="zomato-btn"
+              onclick="sendOrderNotification('Zomato')"
+            >
+              <i class="fas fa-utensils"></i> Order on Zomato
+            </a>
+            <a
+              href="#"
+              class="swiggy-btn"
+              onclick="sendOrderNotification('Swiggy')"
+            >
+              <i class="fas fa-bolt"></i> Order on Swiggy
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- Booking Card -->
       <section
         class="section booking-section"
@@ -886,7 +919,7 @@
                 <h3>
                   <i
                     class="fas fa-calendar-check"
-                    style="color: var(--gold); margin-right: 10px"
+                    style="color: var(--accent); margin-right: 10px"
                     aria-hidden="true"
                   ></i>
                   Booking
@@ -894,7 +927,7 @@
                 <a href="tel:6392693457" class="phone-link"
                   ><i class="fas fa-phone" aria-hidden="true"></i> Call for
                   Booking Request<br /><span
-                    style="font-size: 1.4rem; color: var(--gold)"
+                    style="font-size: 1.4rem; color: var(--accent)"
                     >6392693457</span
                   ></a
                 >
@@ -918,7 +951,7 @@
                 <h3>
                   <i
                     class="fas fa-envelope"
-                    style="color: var(--gold); margin-right: 10px"
+                    style="color: var(--accent); margin-right: 10px"
                     aria-hidden="true"
                   ></i>
                   Contact Us
@@ -963,15 +996,11 @@
               />
             </div>
             <div class="reveal-right">
-              <span class="section-label" style="color: var(--gold)"
-                >✦ About HESTIIA</span
-              >
-              <h2 class="section-title" style="color: #1a1a1a">
-                Pure Veg <span style="color: var(--gold)">Fine Dining</span>
-              </h2>
+              <span class="section-label">✦ About HESTIIA</span>
+              <h2 class="section-title">Pure Veg <span>Fine Dining</span></h2>
               <p
                 style="
-                  color: #444;
+                  color: var(--text-secondary);
                   font-weight: 300;
                   line-height: 2;
                   font-size: 1.05rem;
@@ -979,10 +1008,12 @@
                   font-family: var(--font-sans);
                 "
               >
-                <strong style="color: #1a1a1a">Hestiia Restaurant</strong> is a
-                completely pure veg restaurant in Kanpur's Shyam Nagar area,
-                open since 2022. We serve North Indian, Chinese, Pizza, Burgers,
-                and more.
+                <strong style="color: var(--text-primary)"
+                  >Hestiia Restaurant</strong
+                >
+                is a completely pure veg restaurant in Kanpur's Shyam Nagar
+                area, open since 2022. We serve North Indian, Chinese, Pizza,
+                Burgers, and more.
               </p>
               <div class="about-details">
                 <div class="about-detail-item">
@@ -1026,11 +1057,9 @@
     <div class="page" id="page-venue">
       <section class="section venue-section" style="padding-top: 40px">
         <div class="container">
-          <span class="section-label" style="color: var(--gold)">✦ Venues</span>
-          <h2 class="section-title" style="color: #1a1a1a">
-            Our <span style="color: var(--gold)">Spaces</span>
-          </h2>
-          <p class="section-desc" style="color: #555">
+          <span class="section-label">✦ Venues</span>
+          <h2 class="section-title">Our <span>Spaces</span></h2>
+          <p class="section-desc">
             Explore our beautiful venues designed for every occasion.
           </p>
           <div class="venue-grid">
@@ -1150,7 +1179,7 @@
       >
         <div class="container">
           <span class="section-label">✦ Explore</span>
-          <h2 class="section-title">Our <span class="gold">Menu</span></h2>
+          <h2 class="section-title">Our <span>Menu</span></h2>
           <p class="section-desc">
             A curated selection of our finest vegetarian dishes.
           </p>
@@ -1191,11 +1220,9 @@
     <div class="page" id="page-gallery">
       <section class="section gallery-section" style="padding-top: 40px">
         <div class="container">
-          <span class="section-label" style="color: #ffd700">✦ Gallery</span>
-          <h2 class="section-title" style="color: #ffffff">
-            Visual <span style="color: #ffd700">Storytelling</span>
-          </h2>
-          <p class="section-desc" style="color: rgba(255, 255, 255, 0.8)">
+          <span class="section-label">✦ Gallery</span>
+          <h2 class="section-title">Visual <span>Storytelling</span></h2>
+          <p class="section-desc">
             A glimpse into the artistry, ambiance, and emotion of HESTIIA.
           </p>
           <div class="gallery-grid" id="galleryGrid">
@@ -1282,11 +1309,9 @@
     <div class="page" id="page-events">
       <section class="section events-section" style="padding-top: 40px">
         <div class="container">
-          <span class="section-label" style="color: #ffd700">✦ Events</span>
-          <h2 class="section-title" style="color: #ffffff">
-            Upcoming <span style="color: #ffd700">Events</span>
-          </h2>
-          <p class="section-desc" style="color: rgba(255, 255, 255, 0.8)">
+          <span class="section-label">✦ Events</span>
+          <h2 class="section-title">Upcoming <span>Events</span></h2>
+          <p class="section-desc">
             Join us for exclusive dining experiences and special celebrations.
           </p>
           <div class="events-grid">
@@ -1395,29 +1420,23 @@
       >
         <div class="container">
           <div class="membership-content">
-            <span class="section-label" style="color: #ffd700"
-              >✦ Membership</span
-            >
-            <h2 class="section-title" style="color: #ffffff">
-              Exclusive <span style="color: #ffd700">Club</span>
-            </h2>
+            <span class="section-label">✦ Membership</span>
+            <h2 class="section-title">Exclusive <span>Club</span></h2>
             <div class="separator">
               <i class="fas fa-crown" aria-hidden="true"></i>
             </div>
-            <p class="intro" style="color: rgba(255, 255, 255, 0.85)">
-              <strong style="color: #ffffff"
-                >Home is a membership-based social club</strong
-              >
+            <p class="intro">
+              <strong>Home is a membership-based social club</strong>
               with an eclectic calendar of events, a full-service kitchen and
               cocktail bar, private dining as well as an alfresco rooftop
               lounge.
-              <strong style="color: #ffffff"
+              <strong
                 >Individual or Corporate Membership is by invitation or referral
                 only.</strong
               >
               To request information about our packages and application process,
-              please contact <strong style="color: #ffffff">satyam jha</strong>
-              <a href="tel:916392693457" style="color: #ffd700"
+              please contact <strong>satyam jha</strong>
+              <a href="tel:916392693457" style="color: var(--gold)"
                 >+91 6392693457</a
               >
             </p>
@@ -1428,101 +1447,35 @@
               style="
                 font-family: var(--font-serif);
                 font-size: 1.6rem;
-                color: #ffd700;
+                color: var(--gold);
                 margin-bottom: 8px;
               "
             >
               BENEFITS
             </h3>
             <div class="benefits-grid">
-              <div
-                class="benefit"
-                style="
-                  background: rgba(255, 255, 255, 0.08);
-                  border-color: rgba(255, 255, 255, 0.1);
-                  color: rgba(255, 255, 255, 0.85);
-                "
-              >
-                <i
-                  class="fas fa-check"
-                  aria-hidden="true"
-                  style="color: #ffd700"
-                ></i>
+              <div class="benefit">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 Priority bookings and complimentary access to Curated events
               </div>
-              <div
-                class="benefit"
-                style="
-                  background: rgba(255, 255, 255, 0.08);
-                  border-color: rgba(255, 255, 255, 0.1);
-                  color: rgba(255, 255, 255, 0.85);
-                "
-              >
-                <i
-                  class="fas fa-check"
-                  aria-hidden="true"
-                  style="color: #ffd700"
-                ></i>
+              <div class="benefit">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 Complimentary and Buy One Get One Director's Cut Movie Vouchers
               </div>
-              <div
-                class="benefit"
-                style="
-                  background: rgba(255, 255, 255, 0.08);
-                  border-color: rgba(255, 255, 255, 0.1);
-                  color: rgba(255, 255, 255, 0.85);
-                "
-              >
-                <i
-                  class="fas fa-check"
-                  aria-hidden="true"
-                  style="color: #ffd700"
-                ></i>
+              <div class="benefit">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 Discounted Food and Beverage Vouchers
               </div>
-              <div
-                class="benefit"
-                style="
-                  background: rgba(255, 255, 255, 0.08);
-                  border-color: rgba(255, 255, 255, 0.1);
-                  color: rgba(255, 255, 255, 0.85);
-                "
-              >
-                <i
-                  class="fas fa-check"
-                  aria-hidden="true"
-                  style="color: #ffd700"
-                ></i>
+              <div class="benefit">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 Special Event Vouchers
               </div>
-              <div
-                class="benefit"
-                style="
-                  background: rgba(255, 255, 255, 0.08);
-                  border-color: rgba(255, 255, 255, 0.1);
-                  color: rgba(255, 255, 255, 0.85);
-                "
-              >
-                <i
-                  class="fas fa-check"
-                  aria-hidden="true"
-                  style="color: #ffd700"
-                ></i>
+              <div class="benefit">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 Party Vouchers
               </div>
-              <div
-                class="benefit"
-                style="
-                  background: rgba(255, 255, 255, 0.08);
-                  border-color: rgba(255, 255, 255, 0.1);
-                  color: rgba(255, 255, 255, 0.85);
-                "
-              >
-                <i
-                  class="fas fa-check"
-                  aria-hidden="true"
-                  style="color: #ffd700"
-                ></i>
+              <div class="benefit">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 Concierge Services and Cashback facilities and much more
               </div>
             </div>
@@ -1533,19 +1486,19 @@
               style="
                 font-family: var(--font-serif);
                 font-size: 1.6rem;
-                color: #ffd700;
+                color: var(--gold);
                 margin-bottom: 8px;
               "
             >
               SERVICES
             </h3>
-            <p class="services-text" style="color: rgba(255, 255, 255, 0.85)">
-              <strong style="color: #ffffff">Concierge Service at Home</strong
-              ><br />We offer our members and their guests a host of services to
-              make them feel right at home. Our dedicated concierges will
-              provide services such as private elevator access to the Club,
-              event and movie ticket bookings, private party booking &amp;
-              planning, customized dining options and much more.
+            <p class="services-text">
+              <strong>Concierge Service at Home</strong><br />We offer our
+              members and their guests a host of services to make them feel
+              right at home. Our dedicated concierges will provide services such
+              as private elevator access to the Club, event and movie ticket
+              bookings, private party booking &amp; planning, customized dining
+              options and much more.
             </p>
             <div class="inquiry-btn">
               <button class="btn-primary" onclick="navigateTo('inquiry')">
@@ -1567,12 +1520,10 @@
       >
         <div class="container">
           <span class="section-label">✦ Inquiry</span>
-          <h2 class="section-title">
-            Membership <span class="gold">Inquiry</span>
-          </h2>
+          <h2 class="section-title">Membership <span>Inquiry</span></h2>
           <p
             style="
-              color: var(--gray);
+              color: var(--text-secondary);
               text-align: center;
               max-width: 600px;
               margin: 0 auto 30px;
@@ -1582,14 +1533,14 @@
             "
           >
             Have a question about our membership service? We're here to help,
-            call/email us to<br /><strong style="color: var(--white)"
+            call/email us to<br /><strong style="color: var(--text-primary)"
               >Mr. Satyam Jha,</strong
             >
-            <a href="tel:6392693457" style="color: var(--gold)"
+            <a href="tel:6392693457" style="color: var(--accent)"
               >+91 6392693457</a
             >
             or
-            <a href="mailto:info@hestiia.com" style="color: var(--gold)"
+            <a href="mailto:info@hestiia.com" style="color: var(--accent)"
               >✉️ info@hestiia.com</a
             >
           </p>
@@ -1683,11 +1634,9 @@
     <div class="page" id="page-team">
       <section class="section team-section" style="padding-top: 40px">
         <div class="container">
-          <span class="section-label" style="color: #ffd700">✦ Team</span>
-          <h2 class="section-title" style="color: #ffffff">
-            Meet Our <span style="color: #ffd700">Experts</span>
-          </h2>
-          <p class="section-desc" style="color: rgba(255, 255, 255, 0.8)">
+          <span class="section-label">✦ Team</span>
+          <h2 class="section-title">Meet Our <span>Experts</span></h2>
+          <p class="section-desc">
             Passionate culinary artists dedicated to crafting extraordinary
             dining experiences.
           </p>
@@ -1810,13 +1759,9 @@
     <div class="page" id="page-contact">
       <section class="section contact-section" style="padding-top: 40px">
         <div class="container">
-          <span class="section-label" style="color: var(--gold)"
-            >✦ Contact</span
-          >
-          <h2 class="section-title" style="color: #1a1a1a">
-            Get in <span style="color: var(--gold)">Touch</span>
-          </h2>
-          <p class="section-desc" style="color: #555">
+          <span class="section-label">✦ Contact</span>
+          <h2 class="section-title">Get in <span>Touch</span></h2>
+          <p class="section-desc">
             We'd love to hear from you. Whether it's a reservation, event
             inquiry, or feedback — our team is here to assist.
           </p>
@@ -1847,7 +1792,7 @@
                 <div class="content">
                   <h5>Phone</h5>
                   <p>
-                    <a href="tel:6392693457" style="color: #1a1a1a"
+                    <a href="tel:6392693457" style="color: var(--text-primary)"
                       >6392693457</a
                     >
                   </p>
@@ -1860,7 +1805,9 @@
                 <div class="content">
                   <h5>Email</h5>
                   <p>
-                    <a href="mailto:info@hestiia.com" style="color: #1a1a1a"
+                    <a
+                      href="mailto:info@hestiia.com"
+                      style="color: var(--text-primary)"
                       >info@hestiia.com</a
                     >
                   </p>
@@ -1874,7 +1821,7 @@
                   <h5>Hours</h5>
                   <p>
                     Mon–Sun: 11:00 AM – 11:00 PM
-                    <span style="color: var(--emerald); margin-left: 8px"
+                    <span style="color: var(--accent); margin-left: 8px"
                       >● Open now</span
                     >
                   </p>
@@ -1902,8 +1849,8 @@
                   style="
                     padding: 10px 28px;
                     font-size: 0.7rem;
-                    border-color: var(--gold);
-                    color: var(--gold);
+                    border-color: var(--accent);
+                    color: var(--accent);
                   "
                   ><i class="fab fa-facebook" aria-hidden="true"></i>
                   Facebook</a
@@ -1914,8 +1861,8 @@
                   style="
                     padding: 10px 28px;
                     font-size: 0.7rem;
-                    border-color: var(--gold);
-                    color: var(--gold);
+                    border-color: var(--accent);
+                    color: var(--accent);
                   "
                   ><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a
                 >
@@ -1933,13 +1880,9 @@
       <section class="section reservation-section" style="padding-top: 40px">
         <div class="container">
           <div style="text-align: center; margin-bottom: 40px">
-            <span class="section-label" style="color: var(--gold)"
-              >✦ Reserve</span
-            >
-            <h2 class="section-title" style="color: #1a1a1a">
-              Table <span style="color: var(--gold)">Reservation</span>
-            </h2>
-            <p class="section-desc" style="margin: 0 auto; color: #555">
+            <span class="section-label">✦ Reserve</span>
+            <h2 class="section-title">Table <span>Reservation</span></h2>
+            <p class="section-desc" style="margin: 0 auto">
               Secure your table at HESTIIA for an unforgettable fine dining
               experience.
             </p>
@@ -2027,7 +1970,7 @@
               href="#"
               onclick="navigateTo('home')"
               style="
-                color: var(--gold);
+                color: var(--accent);
                 font-family: var(--font-sans);
                 font-size: 0.85rem;
                 text-decoration: underline;
@@ -2060,11 +2003,13 @@
           </p>
           <div class="footer-map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.046362558778!2d80.355887!3d26.409149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c37f1a1b8c9b1%3A0x4f3b2d1c8e9f6a7b!2s1-b%2C%20Ram%20Puram%2C%20Shyam%20Nagar%2C%20Kanpur%2C%20Uttar%20Pradesh%20208013!5e0!3m2!1sen!2sin!4v1710000000000"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1052.6388355214845!2d80.35716633468645!3d26.40847981304909!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c479fdb7bfbf3%3A0x12aeafc8f8ca2add!2sHestiia%20Restaurant!5e1!3m2!1sen!2sus!4v1784473368108!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              style="border: 0"
               allowfullscreen=""
               loading="lazy"
-              style="filter: grayscale(0.4) invert(0.9) hue-rotate(180deg)"
-              title="HESTIIA location map"
+              referrerpolicy="strict-origin-when-cross-origin"
             ></iframe>
           </div>
         </div>
@@ -2107,7 +2052,7 @@
           </div>
           <p
             style="
-              color: rgba(255, 255, 255, 0.5);
+              color: var(--text-secondary);
               font-weight: 300;
               font-size: 0.7rem;
               margin-top: 10px;
@@ -2127,14 +2072,14 @@
               alert('Terms & Conditions apply. Please contact us for details.')
             "
             style="
-              color: rgba(255, 255, 255, 0.4);
+              color: var(--text-secondary);
               font-size: 0.7rem;
               text-decoration: none;
               transition: color 0.3s;
             "
             >Terms &amp; Conditions</a
           >
-          <span style="color: rgba(255, 255, 255, 0.15); margin: 0 8px">|</span>
+          <span style="color: var(--text-secondary); margin: 0 8px">|</span>
           <a
             href="#"
             onclick="
@@ -2143,7 +2088,7 @@
               )
             "
             style="
-              color: rgba(255, 255, 255, 0.4);
+              color: var(--text-secondary);
               font-size: 0.7rem;
               text-decoration: none;
               transition: color 0.3s;
@@ -2171,9 +2116,7 @@
       </div>
     </footer>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
+    <!-- ===== Custom JavaScript ===== -->
     <script src="script.js"></script>
   </body>
 </html>
