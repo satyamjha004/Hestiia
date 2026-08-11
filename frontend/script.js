@@ -1141,27 +1141,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // ============================================================
 
 function processInstagramEmbeds() {
-
-  if (
-    window.instgrm &&
-    window.instgrm.Embeds
-  ) {
-
+  if (window.instgrm && window.instgrm.Embeds) {
     window.instgrm.Embeds.process();
-
   }
-
 }
 
-
-window.addEventListener(
-  "load",
-  function () {
-
-    setTimeout(
-      processInstagramEmbeds,
-      1000
-    );
-
-  }
-);
+window.addEventListener("load", function () {
+  setTimeout(processInstagramEmbeds, 1000);
+});
