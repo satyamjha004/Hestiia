@@ -129,45 +129,124 @@ document.addEventListener("DOMContentLoaded", function () {
   initHeroSlider();
 
   // ─── POPUP BOOKING ──────────────────────────────────────
+
   const popup = document.getElementById("popupBooking");
   const closePopup = document.getElementById("closePopup");
 
-  setTimeout(() => {
-    popup.classList.add("open");
-  }, 1500);
+  if (popup && closePopup) {
+    setTimeout(() => {
+      popup.classList.add("open");
+    }, 1500);
 
-  closePopup.addEventListener("click", () => popup.classList.remove("open"));
-  popup.addEventListener("click", (e) => {
-    if (e.target === popup) popup.classList.remove("open");
-  });
-
-  // ─── NAVIGATION SYSTEM ──────────────────────────────────
-  function navigateTo(page) {
-    document
-      .querySelectorAll(".page")
-      .forEach((p) => p.classList.remove("active"));
-
-    const target = document.getElementById("page-" + page);
-    if (target) {
-      target.classList.add("active");
-      gsap.fromTo(
-        target,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
-      );
-    }
-
-    document.querySelectorAll(".nav-links > li > a").forEach((a) => {
-      a.classList.remove("active");
-      if (a.dataset.page === page) {
-        a.classList.add("active");
-      }
+    closePopup.addEventListener("click", () => {
+      popup.classList.remove("open");
     });
 
-    lenis.scrollTo(0, { immediate: true });
-    if (menuOpen) hamburger.click();
-    document.getElementById("cartPanel").classList.remove("open");
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.classList.remove("open");
+      }
+    });
   }
+  // HESTIIA — PAGE NAVIGATION SYSTEM
+  // ============================================================
+
+  function navigateTo(page) {
+    const pages = document.querySelectorAll(".page");
+
+    if (!pages.length) {
+      console.warn("No .page sections found.");
+      return;
+    }
+
+    const target = document.getElementById("page-" + page);
+
+    if (!target) {
+      console.warn("Page not found: page-" + page);
+      return;
+    }
+
+    // ----------------------------------------------------------
+    // Hide all pages
+    // ----------------------------------------------------------
+
+    pages.forEach((section) => {
+      section.classList.remove("active");
+    });
+
+    // ----------------------------------------------------------
+    // Show selected page
+    // ----------------------------------------------------------
+
+    target.classList.add("active");
+
+    // ----------------------------------------------------------
+    // Update active navbar item
+    // ----------------------------------------------------------
+
+    document.querySelectorAll(".nav-links a[data-page]").forEach((link) => {
+      link.classList.toggle("active", link.dataset.page === page);
+    });
+
+    // ----------------------------------------------------------
+    // Close mobile menu
+    // ----------------------------------------------------------
+
+    const hamburger = document.getElementById("hamburger");
+
+    if (hamburger && hamburger.getAttribute("aria-expanded") === "true") {
+      hamburger.click();
+    }
+
+    // ----------------------------------------------------------
+    // Close cart
+    // ----------------------------------------------------------
+
+    const cartPanel = document.getElementById("cartPanel");
+
+    if (cartPanel) {
+      cartPanel.classList.remove("open");
+    }
+
+    // ----------------------------------------------------------
+    // Scroll to top
+    // ----------------------------------------------------------
+
+    if (typeof lenis !== "undefined" && lenis) {
+      lenis.scrollTo(0, {
+        immediate: true,
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    // ----------------------------------------------------------
+    // Premium page animation
+    // ----------------------------------------------------------
+
+    if (typeof gsap !== "undefined" && gsap && target) {
+      gsap.fromTo(
+        target,
+        {
+          opacity: 0,
+          y: 25,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power3.out",
+        },
+      );
+    }
+  }
+
+  // IMPORTANT:
+  // onclick="" HTML ke bahar se bhi function available rahe.
+
   window.navigateTo = navigateTo;
 
   // ─── BACK TO TOP ──────────────────────────────────────
@@ -592,24 +671,100 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 3000);
     });
 
-  // ─── NEWSLETTER ──────────────────────────────────────────
-  document
-    .getElementById("footerNewsletterBtn")
-    .addEventListener("click", function () {
-      const input = document.getElementById("footerNewsletter");
-      if (input.value.trim() && input.value.includes("@")) {
-        const msg = `📧 *Newsletter Subscription*\n\nEmail: ${input.value.trim()}`;
-        sendWhatsApp(msg);
-        sendEmail("Newsletter Subscription", msg);
-        alert(
-          "✓ Thank you for subscribing! Get 25% off on your first order. (T&C apply)",
-        );
-        input.value = "";
-      } else {
-        alert("Please enter a valid email address.");
-      }
-    });
+  // HESTIIA — NEWSLETTER
+  // ============================================================
 
+  const newsletterForm = document.getElementById("footerNewsletterForm");
+
+  const newsletterInput = document.getElementById("footerNewsletter");
+
+  const newsletterButton = document.getElementById("footerNewsletterBtn");
+
+  const newsletterMessage = document.getElementById("newsletterMessage");
+
+  if (newsletterForm && newsletterInput) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = newsletterInput.value.trim();
+
+      // --------------------------------------------------------
+      // Validation
+      // --------------------------------------------------------
+
+      if (!email) {
+        showNewsletterMessage("Please enter your email address.", "error");
+
+        newsletterInput.focus();
+
+        return;
+      }
+
+      if (!newsletterInput.checkValidity()) {
+        showNewsletterMessage("Please enter a valid email address.", "error");
+
+        newsletterInput.focus();
+
+        return;
+      }
+
+      // --------------------------------------------------------
+      // Loading state
+      // --------------------------------------------------------
+
+      if (newsletterButton) {
+        newsletterButton.disabled = true;
+
+        newsletterButton.textContent = "Sending...";
+      }
+
+      // --------------------------------------------------------
+      // Owner notification
+      // --------------------------------------------------------
+
+      const message =
+        `📧 HESTIIA Newsletter Subscription\n\n` + `Email: ${email}`;
+
+      // WhatsApp
+      if (typeof sendWhatsApp === "function") {
+        sendWhatsApp(message);
+      }
+
+      // Email
+      if (typeof sendEmail === "function") {
+        sendEmail("HESTIIA Newsletter Subscription", message);
+      }
+
+      // --------------------------------------------------------
+      // Success
+      // --------------------------------------------------------
+
+      setTimeout(() => {
+        showNewsletterMessage(
+          "✓ You're subscribed! Welcome to HESTIIA.",
+          "success",
+        );
+
+        newsletterInput.value = "";
+
+        if (newsletterButton) {
+          newsletterButton.disabled = false;
+
+          newsletterButton.textContent = "Subscribe";
+        }
+      }, 500);
+    });
+  }
+
+  /* Newsletter message helper */
+
+  function showNewsletterMessage(message, type) {
+    if (!newsletterMessage) return;
+
+    newsletterMessage.textContent = message;
+
+    newsletterMessage.className = "newsletter-message " + type;
+  }
   // ─── MENU DATA & RENDER ─────────────────────────────────
   const menuData = [
     {
@@ -980,3 +1135,33 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("🛒 Cart System with Razorpay Payment Integration");
   console.log("📱 All notifications sent to WhatsApp + Email");
 });
+
+// ============================================================
+// HESTIIA — INSTAGRAM EMBED INITIALIZATION
+// ============================================================
+
+function processInstagramEmbeds() {
+
+  if (
+    window.instgrm &&
+    window.instgrm.Embeds
+  ) {
+
+    window.instgrm.Embeds.process();
+
+  }
+
+}
+
+
+window.addEventListener(
+  "load",
+  function () {
+
+    setTimeout(
+      processInstagramEmbeds,
+      1000
+    );
+
+  }
+);
