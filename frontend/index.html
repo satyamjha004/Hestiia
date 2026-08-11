@@ -107,7 +107,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ===== POPUP BOOKING ===== -->
+    <!-- ===== POPUP BOOKING ===== 
     <div
       class="popup-overlay"
       id="popupBooking"
@@ -162,7 +162,7 @@
         </button>
       </div>
     </div>
-
+-->
     <!-- ===== SCROLL PROGRESS ===== -->
     <div
       class="scroll-progress"
@@ -213,9 +213,6 @@
         <button class="opt-btn" data-action="contact">
           <i class="fas fa-envelope" aria-hidden="true"></i> Contact Us
         </button>
-        <button class="opt-btn" data-action="membership">
-          <i class="fas fa-crown" aria-hidden="true"></i> Membership Inquiry
-        </button>
       </div>
     </div>
 
@@ -233,43 +230,6 @@
     <a href="tel:6392693457" class="call-float" aria-label="Call HESTIIA">
       <i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now
     </a>
-
-    <!-- ===== CART PANEL ===== -->
-    <div
-      class="cart-panel"
-      id="cartPanel"
-      role="dialog"
-      aria-label="Shopping cart"
-    >
-      <div class="cart-header">
-        <h3>
-          <i
-            class="fas fa-shopping-bag"
-            style="color: var(--gold); margin-right: 10px"
-            aria-hidden="true"
-          ></i>
-          Your Cart
-        </h3>
-        <button class="close-cart" id="closeCart" aria-label="Close cart">
-          &times;
-        </button>
-      </div>
-      <div class="cart-items" id="cartItems">
-        <div class="empty-cart">
-          <i class="fas fa-shopping-bag" aria-hidden="true"></i>
-          Your cart is empty.<br />
-          <span style="font-size: 0.8rem; opacity: 0.6"
-            >Add items from our menu</span
-          >
-        </div>
-      </div>
-      <div class="cart-footer" id="cartFooter" style="display: none">
-        <div class="cart-total">
-          <span>Total</span> <span class="amount" id="cartTotal">₹0</span>
-        </div>
-        <button class="checkout-btn" id="checkoutBtn">Proceed to Pay</button>
-      </div>
-    </div>
 
     <!-- ===== CHECKOUT MODAL ===== -->
     <div
@@ -357,8 +317,9 @@
       </div>
     </div>
 
-    <!-- ===== NAVBAR (Glassmorphism - Stays Visible) ===== -->
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar" aria-label="Main navigation">
+      <!-- LOGO -->
       <a
         href="#"
         class="nav-logo"
@@ -366,12 +327,13 @@
         aria-label="HESTIIA Home"
       >
         <img
-          src="images/logo.png"
+          src="images/logo1.PNG"
           alt="HESTIIA Restaurant"
           class="nav-logo-img"
         />
       </a>
 
+      <!-- NAVIGATION LINKS -->
       <div class="nav-links-wrap">
         <ul class="nav-links" role="menubar">
           <li role="none">
@@ -380,94 +342,54 @@
               class="active"
               data-page="home"
               onclick="navigateTo('home')"
-              >Home</a
             >
+              Home
+            </a>
           </li>
+
           <li role="none">
-            <a role="menuitem" data-page="about" onclick="navigateTo('about')"
-              >About</a
-            >
+            <a role="menuitem" data-page="menu" onclick="navigateTo('menu')">
+              Menu
+            </a>
           </li>
-          <li role="none" class="has-dropdown">
-            <a role="menuitem" data-page="venue" onclick="navigateTo('venue')"
-              >Venue
-              <i
-                class="fas fa-chevron-down"
-                style="font-size: 0.5rem; margin-left: 4px"
-                aria-hidden="true"
-              ></i
-            ></a>
-            <div class="dropdown" role="menu">
-              <a role="menuitem" onclick="navigateTo('venue')">All Venues</a>
-              <a role="menuitem" onclick="navigateTo('venue')"
-                >Private Dining</a
-              >
-              <a role="menuitem" onclick="navigateTo('venue')"
-                >Birthday Parties</a
-              >
-              <a role="menuitem" onclick="navigateTo('venue')"
-                >Anniversary Parties</a
-              >
-              <a role="menuitem" onclick="navigateTo('venue')">Party Hall</a>
-            </div>
+
+          <li role="none">
+            <a role="menuitem" data-page="about" onclick="navigateTo('about')">
+              About
+            </a>
           </li>
-          <li role="none" class="has-dropdown">
-            <a role="menuitem" data-page="menu" onclick="navigateTo('menu')"
-              >Menu
-              <i
-                class="fas fa-chevron-down"
-                style="font-size: 0.5rem; margin-left: 4px"
-                aria-hidden="true"
-              ></i
-            ></a>
-            <div class="dropdown" role="menu">
-              <a role="menuitem" onclick="navigateTo('menu')">Full Menu</a>
-              <a role="menuitem" onclick="navigateTo('menu')">Specials</a>
-              <a role="menuitem" onclick="navigateTo('menu')">Seasonal</a>
-              <a role="menuitem" onclick="navigateTo('menu')">Drinks</a>
-            </div>
-          </li>
+
           <li role="none">
             <a
               role="menuitem"
               data-page="gallery"
               onclick="navigateTo('gallery')"
-              >Gallery</a
             >
+              Gallery
+            </a>
           </li>
-          <li role="none">
-            <a role="menuitem" data-page="events" onclick="navigateTo('events')"
-              >Event</a
-            >
-          </li>
-          <li role="none">
-            <a
-              role="menuitem"
-              data-page="membership"
-              onclick="navigateTo('membership')"
-              >Membership</a
-            >
-          </li>
+
           <li role="none">
             <a
               role="menuitem"
               data-page="contact"
               onclick="navigateTo('contact')"
-              >Contact</a
             >
+              Contact
+            </a>
           </li>
         </ul>
       </div>
+
+      <!-- NAV ACTIONS -->
 
       <div class="nav-actions">
         <button class="nav-btn" onclick="navigateTo('reservation')">
           Book Table
         </button>
-        <button class="nav-cart-btn" id="navCartBtn" aria-label="Open cart">
-          <i class="fas fa-shopping-bag" aria-hidden="true"></i>
-          <span class="cart-badge empty" id="cartBadge">0</span>
-        </button>
       </div>
+
+      <!-- MOBILE MENU -->
 
       <button
         class="nav-hamburger"
@@ -475,10 +397,11 @@
         aria-label="Toggle menu"
         aria-expanded="false"
       >
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </nav>
-
     <!-- ============================================================
     PAGE: HOME
     ============================================================ -->
@@ -487,31 +410,32 @@
       <section class="hero" id="hero" aria-label="Hero banner">
         <video class="hero-video" autoplay muted loop playsinline>
           <source
-            src="https://cdn.coverr.co/videos/coverr-waiters-serving-dishes-at-a-restaurant-3976/1080p.mp4"
+            src="images/Hall.jpeg"
             type="video/mp4"
           />
         </video>
         <div class="hero-slider-overlay">
           <div class="hero-slider-container" id="heroSliderContainer">
-            <img
-              class="hero-slide-img active"
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80"
-              alt="Restaurant interior"
-            />
+           
             <img
               class="hero-slide-img"
-              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80"
+              src="images/counter.jpeg"
               alt="Food plating"
             />
             <img
               class="hero-slide-img"
-              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
+              src="images/Hall.jpeg"
               alt="Dining table"
             />
             <img
               class="hero-slide-img"
-              src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1600&q=80"
-              alt="Gourmet dish"
+              src="images/counter.jpeg"
+              alt="Food plating"
+            />
+            <img
+              class="hero-slide-img"
+              src="images/Hall.jpeg"
+              alt="Dining table"
             />
           </div>
         </div>
@@ -553,11 +477,12 @@
         </div>
       </section>
 
-      <!-- Instagram Stories -->
+      <!-- Instagram Stories
+      
       <section
         class="section instagram-stories-section"
         aria-label="Instagram stories"
-      >
+       >
         <div class="container">
           <span class="section-label">✦ Instagram Stories</span>
           <h2 class="section-title">
@@ -653,160 +578,156 @@
           </div>
         </div>
       </section>
+ -->
+<!-- ============================================================
+     HESTIIA — INSTAGRAM STORIES
+     ============================================================ -->
 
-      <!-- Events Preview -->
-      <section class="section events-section" aria-label="Upcoming events">
-        <div class="container">
-          <span class="section-label">✦ Upcoming</span>
-          <h2 class="section-title">Our <span>Events</span></h2>
-          <p class="section-desc">
-            Join us for exclusive dining experiences, wine tastings, and special
-            celebrations.
-          </p>
-          <div class="events-grid" style="margin-top: 30px">
-            <article class="event-card reveal-scale">
-              <img
-                src="https://images.unsplash.com/photo-1530023367847-a683933f4172?w=600&q=80"
-                alt="Wine tasting event"
-                loading="lazy"
-              />
-              <div class="body">
-                <div class="date">📅 July 15, 2026</div>
-                <h4>Wine &amp; Dine Evening</h4>
-                <p>
-                  An exclusive 5-course dinner paired with premium wines from
-                  around the world.
-                </p>
-              </div>
-            </article>
-            <article
-              class="event-card reveal-scale"
-              style="transition-delay: 0.1s"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80"
-                alt="Live jazz night"
-                loading="lazy"
-              />
-              <div class="body">
-                <div class="date">📅 August 5, 2026</div>
-                <h4>Live Jazz Night</h4>
-                <p>
-                  Enjoy an evening of soulful jazz music with our special
-                  curated dinner menu.
-                </p>
-              </div>
-            </article>
-            <article
-              class="event-card reveal-scale"
-              style="transition-delay: 0.2s"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80"
-                alt="Chef's table experience"
-                loading="lazy"
-              />
-              <div class="body">
-                <div class="date">📅 August 20, 2026</div>
-                <h4>Chef's Table Experience</h4>
-                <p>
-                  Interactive dining with our head chef featuring seasonal
-                  farm-to-table ingredients.
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="view-menu-wrap">
-            <button class="btn-primary" onclick="navigateTo('events')">
-              <span>View All Events</span>
-            </button>
-          </div>
-        </div>
-      </section>
+<section
+  class="instagram-stories-section"
+  id="instagram-stories"
+  aria-label="Instagram Stories"
+>
 
-      <!-- Meet Our Experts -->
-      <section class="section team-section" aria-label="Our team of experts">
-        <div class="container">
-          <span class="section-label">✦ Team</span>
-          <h2 class="section-title">Meet Our <span>Experts</span></h2>
-          <p class="section-desc">
-            Passionate culinary artists dedicated to crafting extraordinary
-            dining experiences.
-          </p>
-          <div class="team-grid" style="margin-top: 30px">
-            <article class="team-card reveal-scale">
-              <img
-                src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=400&q=80"
-                alt="Chef Julien Rousseau"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>Chef Julien Rousseau</h4>
-                <div class="role">Head Chef</div>
-                <p>3 Michelin Stars · 18 years of excellence</p>
-                <div class="expertise">
-                  <span>French Cuisine</span><span>Michelin Star</span>
-                </div>
-              </div>
-            </article>
-            <article
-              class="team-card reveal-scale"
-              style="transition-delay: 0.1s"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
-                alt="Alexandre Moreau"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>Alexandre Moreau</h4>
-                <div class="role">Sommelier</div>
-                <p>Best Wine List Award 2024 · 12 years experience</p>
-                <div class="expertise">
-                  <span>Wine Pairing</span><span>Sommelier</span>
-                </div>
-              </div>
-            </article>
-            <article
-              class="team-card reveal-scale"
-              style="transition-delay: 0.2s"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80"
-                alt="Élise Fontaine"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>Élise Fontaine</h4>
-                <div class="role">Pastry Chef</div>
-                <p>World Pastry Champion 2022 · 8 years expertise</p>
-                <div class="expertise">
-                  <span>Pastry</span><span>Desserts</span>
-                </div>
-              </div>
-            </article>
-            <article
-              class="team-card reveal-scale"
-              style="transition-delay: 0.3s"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80"
-                alt="James Wellington"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>James Wellington</h4>
-                <div class="role">Restaurant Manager</div>
-                <p>15 years luxury hospitality · Michelin-starred service</p>
-                <div class="expertise">
-                  <span>Hospitality</span><span>Service</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+  <div class="instagram-stories-header">
 
+    <span class="section-label">
+      ✦ Instagram
+    </span>
+
+    <h2 class="section-title">
+      Instagram <span>Stories</span>
+    </h2>
+
+    <p class="instagram-follow-text">
+      Follow Us
+      <a
+        href="https://www.instagram.com/hestiiarestaurant/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        @hestiiarestaurant
+      </a>
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       REELS SLIDER
+       ========================================================== -->
+
+  <div class="reels-viewport">
+
+    <div class="reels-track">
+
+
+      <!-- REEL 1 -->
+      <div class="reel-card">
+
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DSU8DkWkgjv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          data-instgrm-version="14">
+        </blockquote>
+
+      </div>
+
+
+      <!-- REEL 2 -->
+      <div class="reel-card">
+
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/C7OkxIdSaC6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          data-instgrm-version="14">
+        </blockquote>
+
+      </div>
+
+
+      <!-- REEL 3 -->
+      <div class="reel-card">
+
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/C7eOlKTSA2k/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          data-instgrm-version="14">
+        </blockquote>
+
+      </div>
+
+
+      <!-- REEL 4 -->
+      <div class="reel-card">
+
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DblL0RziDKn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          data-instgrm-version="14">
+        </blockquote>
+
+      </div>
+
+
+      <!-- ========================================================
+           DUPLICATE SET
+           Required for seamless infinite animation
+           ======================================================== -->
+
+      <div class="reel-card">
+
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DSU8DkWkgjv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          data-instgrm-version="14">
+        </blockquote>
+
+      </div>
+
+
+      <div class="reel-card">
+
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/C7OkxIdSaC6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          data-instgrm-version="14">
+        </blockquote>
+
+      </div>
+
+
+      <div class="reel-card">
+
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/C7eOlKTSA2k/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          data-instgrm-version="14">
+        </blockquote>
+
+      </div>
+
+
+      <div class="reel-card">
+
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DblL0RziDKn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          data-instgrm-version="14">
+        </blockquote>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<!-- Instagram Official Embed Script -->
+
+<script
+  async
+  src="https://www.instagram.com/embed.js">
+</script>
       <!-- Gallery Section -->
       <section class="section gallery-section" aria-label="Gallery">
         <div class="container">
@@ -842,7 +763,7 @@
             </div>
             <div class="item reveal-scale" style="transition-delay: 0.3s">
               <img
-                src="https://images.unsplash.com/photo-1559339352-11d8e70e4b5d?w=600&q=80"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80"
                 alt="Wine selection"
                 loading="lazy"
               />
@@ -889,20 +810,25 @@
             <img src="images/swiggy.png" alt="Swiggy" loading="lazy" />
           </div>
           <div class="order-platforms">
-            <a
-              href="#"
-              class="zomato-btn"
-              onclick="sendOrderNotification('Zomato')"
-            >
-              <i class="fas fa-utensils"></i> Order on Zomato
-            </a>
-            <a
-              href="#"
-              class="swiggy-btn"
-              onclick="sendOrderNotification('Swiggy')"
-            >
-              <i class="fas fa-bolt"></i> Order on Swiggy
-            </a>
+           <a
+  href="https://www.zomato.com/kanpur/hestiia-restaurant-shyam-nagar/order"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="delivery-btn zomato-btn"
+>
+  <i class="fas fa-utensils"></i>
+  Order on Zomato
+</a>
+
+<a
+  href="https://www.swiggy.com/restaurants/kanpur/shyam-nagar/hestiia-restaurant-1240905/dineout"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="delivery-btn swiggy-btn"
+>
+  <i class="fas fa-shopping-bag"></i>
+  Order on Swiggy
+</a>
           </div>
         </div>
       </section>
@@ -1410,352 +1336,8 @@
       </section>
     </div>
 
-    <!-- ============================================================
-    PAGE: MEMBERSHIP
-    ============================================================ -->
-    <div class="page" id="page-membership">
-      <section
-        class="section membership-page-section"
-        style="padding-top: 40px"
-      >
-        <div class="container">
-          <div class="membership-content">
-            <span class="section-label">✦ Membership</span>
-            <h2 class="section-title">Exclusive <span>Club</span></h2>
-            <div class="separator">
-              <i class="fas fa-crown" aria-hidden="true"></i>
-            </div>
-            <p class="intro">
-              <strong>Home is a membership-based social club</strong>
-              with an eclectic calendar of events, a full-service kitchen and
-              cocktail bar, private dining as well as an alfresco rooftop
-              lounge.
-              <strong
-                >Individual or Corporate Membership is by invitation or referral
-                only.</strong
-              >
-              To request information about our packages and application process,
-              please contact <strong>satyam jha</strong>
-              <a href="tel:916392693457" style="color: var(--gold)"
-                >+91 6392693457</a
-              >
-            </p>
-            <div class="separator" style="margin-top: 32px">
-              <i class="fas fa-gem" aria-hidden="true"></i>
-            </div>
-            <h3
-              style="
-                font-family: var(--font-serif);
-                font-size: 1.6rem;
-                color: var(--gold);
-                margin-bottom: 8px;
-              "
-            >
-              BENEFITS
-            </h3>
-            <div class="benefits-grid">
-              <div class="benefit">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                Priority bookings and complimentary access to Curated events
-              </div>
-              <div class="benefit">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                Complimentary and Buy One Get One Director's Cut Movie Vouchers
-              </div>
-              <div class="benefit">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                Discounted Food and Beverage Vouchers
-              </div>
-              <div class="benefit">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                Special Event Vouchers
-              </div>
-              <div class="benefit">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                Party Vouchers
-              </div>
-              <div class="benefit">
-                <i class="fas fa-check" aria-hidden="true"></i>
-                Concierge Services and Cashback facilities and much more
-              </div>
-            </div>
-            <div class="separator" style="margin-top: 32px">
-              <i class="fas fa-concierge-bell" aria-hidden="true"></i>
-            </div>
-            <h3
-              style="
-                font-family: var(--font-serif);
-                font-size: 1.6rem;
-                color: var(--gold);
-                margin-bottom: 8px;
-              "
-            >
-              SERVICES
-            </h3>
-            <p class="services-text">
-              <strong>Concierge Service at Home</strong><br />We offer our
-              members and their guests a host of services to make them feel
-              right at home. Our dedicated concierges will provide services such
-              as private elevator access to the Club, event and movie ticket
-              bookings, private party booking &amp; planning, customized dining
-              options and much more.
-            </p>
-            <div class="inquiry-btn">
-              <button class="btn-primary" onclick="navigateTo('inquiry')">
-                <span>Membership Inquiry</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ============================================================
-    PAGE: INQUIRY
-    ============================================================ -->
-    <div class="page" id="page-inquiry">
-      <section
-        class="section"
-        style="padding-top: 40px; background: var(--bg-primary)"
-      >
-        <div class="container">
-          <span class="section-label">✦ Inquiry</span>
-          <h2 class="section-title">Membership <span>Inquiry</span></h2>
-          <p
-            style="
-              color: var(--text-secondary);
-              text-align: center;
-              max-width: 600px;
-              margin: 0 auto 30px;
-              font-weight: 300;
-              line-height: 1.9;
-              font-family: var(--font-sans);
-            "
-          >
-            Have a question about our membership service? We're here to help,
-            call/email us to<br /><strong style="color: var(--text-primary)"
-              >Mr. Satyam Jha,</strong
-            >
-            <a href="tel:6392693457" style="color: var(--accent)"
-              >+91 6392693457</a
-            >
-            or
-            <a href="mailto:info@hestiia.com" style="color: var(--accent)"
-              >✉️ info@hestiia.com</a
-            >
-          </p>
-          <div class="inquiry-form">
-            <form id="inquiryForm">
-              <div class="form-group">
-                <label for="inqName">Your Name</label
-                ><input
-                  type="text"
-                  id="inqName"
-                  placeholder="Your full name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="inqEmail">Your Email</label
-                ><input
-                  type="email"
-                  id="inqEmail"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="inqPhone">Phone Number</label
-                ><input
-                  type="tel"
-                  id="inqPhone"
-                  placeholder="Your phone number"
-                />
-              </div>
-              <div class="row-2">
-                <div class="form-group">
-                  <label for="inqAge">Age</label
-                  ><input type="number" id="inqAge" placeholder="Your age" />
-                </div>
-                <div class="form-group">
-                  <label for="inqDesignation">Designation (optional)</label
-                  ><input
-                    type="text"
-                    id="inqDesignation"
-                    placeholder="Your designation"
-                  />
-                </div>
-              </div>
-              <div class="row-2">
-                <div class="form-group">
-                  <label for="inqPincode">Pincode (optional)</label
-                  ><input type="text" id="inqPincode" placeholder="Pincode" />
-                </div>
-                <div class="form-group">
-                  <label for="inqCompany">Company (optional)</label
-                  ><input
-                    type="text"
-                    id="inqCompany"
-                    placeholder="Company name"
-                  />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inqAddress">Full Address (optional)</label
-                ><input
-                  type="text"
-                  id="inqAddress"
-                  placeholder="Your full address"
-                />
-              </div>
-              <div class="form-group">
-                <label for="inqMessage">Special Request (optional)</label
-                ><textarea
-                  id="inqMessage"
-                  rows="3"
-                  placeholder="Any special request or message"
-                ></textarea>
-              </div>
-              <button type="submit" class="btn-submit">
-                Send Your Message
-              </button>
-              <div class="success-msg" id="inqSuccess">
-                ✓ Your inquiry has been sent! We'll get back to you soon.
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ============================================================
-    PAGE: TEAM
-    ============================================================ -->
-    <div class="page" id="page-team">
-      <section class="section team-section" style="padding-top: 40px">
-        <div class="container">
-          <span class="section-label">✦ Team</span>
-          <h2 class="section-title">Meet Our <span>Experts</span></h2>
-          <p class="section-desc">
-            Passionate culinary artists dedicated to crafting extraordinary
-            dining experiences.
-          </p>
-          <div class="team-grid">
-            <div class="team-card reveal-scale">
-              <img
-                src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=400&q=80"
-                alt="Chef Julien Rousseau"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>Chef Julien Rousseau</h4>
-                <div class="role">Head Chef</div>
-                <p>
-                  3 Michelin Stars · 18 years of excellence · Le Cordon Bleu
-                  Paris
-                </p>
-                <div class="expertise">
-                  <span>French Cuisine</span><span>Michelin Star</span
-                  ><span>Fine Dining</span>
-                </div>
-              </div>
-            </div>
-            <div class="team-card reveal-scale" style="transition-delay: 0.1s">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
-                alt="Alexandre Moreau"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>Alexandre Moreau</h4>
-                <div class="role">Sommelier</div>
-                <p>
-                  Best Wine List Award 2024 · 12 years experience · WSET Level 4
-                </p>
-                <div class="expertise">
-                  <span>Wine Pairing</span><span>Sommelier</span
-                  ><span>Bordeaux</span>
-                </div>
-              </div>
-            </div>
-            <div class="team-card reveal-scale" style="transition-delay: 0.2s">
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80"
-                alt="Élise Fontaine"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>Élise Fontaine</h4>
-                <div class="role">Pastry Chef</div>
-                <p>
-                  World Pastry Champion 2022 · 8 years expertise · Ferrandi
-                  Paris
-                </p>
-                <div class="expertise">
-                  <span>Pastry</span><span>Desserts</span><span>Chocolate</span>
-                </div>
-              </div>
-            </div>
-            <div class="team-card reveal-scale" style="transition-delay: 0.3s">
-              <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80"
-                alt="James Wellington"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>James Wellington</h4>
-                <div class="role">Restaurant Manager</div>
-                <p>
-                  15 years luxury hospitality · Michelin-starred service ·
-                  Cornell University
-                </p>
-                <div class="expertise">
-                  <span>Hospitality</span><span>Service</span
-                  ><span>Events</span>
-                </div>
-              </div>
-            </div>
-            <div class="team-card reveal-scale" style="transition-delay: 0.4s">
-              <img
-                src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&q=80"
-                alt="Maria Santos"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>Maria Santos</h4>
-                <div class="role">Sous Chef</div>
-                <p>
-                  8 years fine dining · Expert in Mediterranean &amp; Asian
-                  fusion
-                </p>
-                <div class="expertise">
-                  <span>Mediterranean</span><span>Asian Fusion</span>
-                </div>
-              </div>
-            </div>
-            <div class="team-card reveal-scale" style="transition-delay: 0.5s">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
-                alt="David Chen"
-                loading="lazy"
-              />
-              <div class="body">
-                <h4>David Chen</h4>
-                <div class="role">Head Mixologist</div>
-                <p>World Class Cocktail Competition 2023 · 10 years of craft</p>
-                <div class="expertise">
-                  <span>Cocktails</span><span>Mixology</span><span>Bar</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ============================================================
-    PAGE: CONTACT
-    ============================================================ -->
+    PAGE: CONTACT ============================================================
+    -->
     <div class="page" id="page-contact">
       <section class="section contact-section" style="padding-top: 40px">
         <div class="container">
@@ -1768,10 +1350,9 @@
           <div class="contact-grid">
             <div class="contact-map reveal-left">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.046362558778!2d80.355887!3d26.409149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c37f1a1b8c9b1%3A0x4f3b2d1c8e9f6a7b!2s1-b%2C%20Ram%20Puram%2C%20Shyam%20Nagar%2C%20Kanpur%2C%20Uttar%20Pradesh%20208013!5e0!3m2!1sen!2sin!4v1710000000000"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1052.6388355214845!2d80.35716633468645!3d26.40847981304909!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c479fdb7bfbf3%3A0x12aeafc8f8ca2add!2sHestiia%20Restaurant!5e1!3m2!1sen!2sus!4v1784473368108!5m2!1sen!2sus"
                 allowfullscreen=""
                 loading="lazy"
-                style="filter: grayscale(0.4) invert(0.9) hue-rotate(180deg)"
                 title="Hestiia  location map"
               ></iframe>
             </div>
@@ -1992,9 +1573,9 @@
         <div class="footer-brand">
           <div class="logo">
             <img
-              src="images/logo.png"
+              src="images/logo1.PNG"
               alt="HESTIIA"
-              style="height: 50px; width: auto; filter: brightness(0) invert(1)"
+              style="height: 150px; width: 150px"
             />
           </div>
           <p>
@@ -2017,14 +1598,9 @@
           <h5>Quick Links</h5>
           <a onclick="navigateTo('home')">Home</a>
           <a onclick="navigateTo('about')">About</a>
-          <a onclick="navigateTo('venue')">Venue</a>
           <a onclick="navigateTo('menu')">Menu</a>
           <a onclick="navigateTo('gallery')">Gallery</a>
-          <a onclick="navigateTo('events')">Events</a>
-          <a onclick="navigateTo('membership')">Membership</a>
-          <a onclick="navigateTo('team')">Our Team</a>
           <a onclick="navigateTo('contact')">Contact</a>
-          <a onclick="navigateTo('reservation')">Reservation</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
@@ -2035,32 +1611,44 @@
         </div>
         <div class="footer-col footer-newsletter">
           <h5>Newsletter</h5>
-          <div class="offer-text">
-            ✨ Subscribe Hestiia Restaurant &amp; Get Upto 20% Off (Terms &amp;
-            Condition apply)
-          </div>
-          <div class="input-wrap">
-            <input
-              type="email"
-              placeholder="Your email"
-              id="footerNewsletter"
-              aria-label="Email for newsletter"
-            />
-            <button class="subscribe-btn" id="footerNewsletterBtn">
+
+          <p class="newsletter-description">
+            Subscribe for exclusive offers, seasonal menus, and special dining
+            experiences from HESTIIA.
+          </p>
+
+          <form class="newsletter-form" id="footerNewsletterForm">
+            <div class="newsletter-input-wrap">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+
+              <input
+                type="email"
+                id="footerNewsletter"
+                name="email"
+                placeholder="Your email address"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              id="footerNewsletterBtn"
+              class="subscribe-btn"
+            >
               Subscribe
             </button>
-          </div>
-          <p
-            style="
-              color: var(--text-secondary);
-              font-weight: 300;
-              font-size: 0.7rem;
-              margin-top: 10px;
-              font-family: var(--font-sans);
-            "
-          >
-            Get Latest updates &amp; offers
+          </form>
+
+          <p class="newsletter-note">
+            No spam. Only HESTIIA updates &amp; offers.
           </p>
+
+          <div
+            id="newsletterMessage"
+            class="newsletter-message"
+            aria-live="polite"
+          ></div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -2117,6 +1705,8 @@
     </footer>
 
     <!-- ===== Custom JavaScript ===== -->
+         <script async src="https://www.instagram.com/embed.js"></script>
+
     <script src="script.js"></script>
   </body>
 </html>
