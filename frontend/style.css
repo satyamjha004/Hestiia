@@ -2153,19 +2153,16 @@ button {
 .instagram-reels-section {
   position: relative;
 
-  padding:
-    100px 0 45px;
+  padding: 100px 0 45px;
 
-  background:
-    linear-gradient(
-      180deg,
-      var(--bg-primary) 0%,
-      var(--bg-secondary) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
 
   overflow: hidden;
 }
-
 
 /* Reels grid */
 
@@ -2174,14 +2171,12 @@ button {
 
   display: grid;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 24px;
 
   margin-top: 45px;
 }
-
 
 /* Reel card */
 
@@ -2194,29 +2189,22 @@ button {
 
   border-radius: 18px;
 
-  background:
-    #ffffff;
+  background: #ffffff;
 
-  border:
-    1px solid rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.07);
 
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 
   transition:
     transform 0.4s ease,
     box-shadow 0.4s ease;
 }
 
-
 .instagram-reel-card:hover {
-  transform:
-    translateY(-6px);
+  transform: translateY(-6px);
 
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.13);
 }
-
 
 /* Instagram's embed */
 
@@ -2225,59 +2213,42 @@ button {
 
   min-width: 0 !important;
 
-  margin:
-    0 !important;
+  margin: 0 !important;
 
   border-radius: 18px !important;
 }
 
-
-
 .instagram-follow-btn:hover {
-  background:
-    var(--gold);
+  background: var(--gold);
 
-  color:
-    #ffffff;
+  color: #ffffff;
 
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
-  box-shadow:
-    0 12px 30px rgba(201, 168, 76, 0.20);
+  box-shadow: 0 12px 30px rgba(201, 168, 76, 0.2);
 }
-
 
 .instagram-follow-btn:hover i {
-  color:
-    #ffffff;
+  color: #ffffff;
 }
-
 
 /* Tablet */
 
 @media (max-width: 900px) {
-
   .instagram-reels-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
-
 
 /* Mobile */
 
 @media (max-width: 600px) {
-
   .instagram-reels-section {
-    padding:
-      80px 0 90px;
+    padding: 80px 0 90px;
   }
 
   .instagram-reels-grid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 20px;
 
@@ -2291,7 +2262,6 @@ button {
 
     margin: 0 auto;
   }
-
 }
 /* ─── AI CHATBOT ─── */
 .chat-float {
@@ -4272,14 +4242,12 @@ button {
   padding: 110px 0 115px;
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      180deg,
-      var(--bg-primary) 0%,
-      var(--bg-secondary) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
 }
-
 
 /* ============================================================
    HEADER
@@ -4297,7 +4265,6 @@ button {
   margin-right: auto;
 }
 
-
 /* ============================================================
    SLIDER VIEWPORT
    ============================================================ */
@@ -4308,25 +4275,22 @@ button {
   overflow: hidden;
   position: relative;
 
-  -webkit-mask-image:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      #000 6%,
-      #000 94%,
-      transparent 100%
-    );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
 
-  mask-image:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      #000 6%,
-      #000 94%,
-      transparent 100%
-    );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
 }
-
 
 /* ============================================================
    MOVING TRACK
@@ -4339,22 +4303,16 @@ button {
 
   width: max-content;
 
-  animation:
-    hestiiaReelsInfinite
-    55s
-    linear
-    infinite;
+  animation: hestiiaReelsInfinite 55s linear infinite;
 
   will-change: transform;
 }
-
 
 /* Pause when mouse is over */
 
 .reels-viewport:hover .reels-track {
   animation-play-state: paused;
 }
-
 
 /* ============================================================
    REEL CARD
@@ -4373,22 +4331,18 @@ button {
 
   background: #ffffff;
 
-  box-shadow:
-    0 18px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
 
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
 }
 
-
 .reel-card:hover {
   transform: translateY(-6px);
 
-  box-shadow:
-    0 28px 70px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
 }
-
 
 /* ============================================================
    INSTAGRAM EMBED
@@ -4406,26 +4360,19 @@ button {
   border-radius: 18px !important;
 }
 
-
 /* ============================================================
    INFINITE ANIMATION
    ============================================================ */
 
 @keyframes hestiiaReelsInfinite {
-
   from {
     transform: translateX(0);
   }
 
   to {
-    transform:
-      translateX(
-        calc(-50% - 12px)
-      );
+    transform: translateX(calc(-50% - 12px));
   }
-
 }
-
 
 /* ============================================================
    FOLLOW BUTTON
@@ -4440,7 +4387,6 @@ button {
   position: relative;
   z-index: 2;
 }
-
 
 .instagram-follow-btn {
   display: inline-flex;
@@ -4473,12 +4419,10 @@ button {
   transition: all 0.3s ease;
 }
 
-
 .instagram-follow-btn i {
   color: var(--gold);
   font-size: 0.95rem;
 }
-
 
 .instagram-follow-btn:hover {
   background: var(--gold);
@@ -4486,17 +4430,14 @@ button {
 
   transform: translateY(-2px);
 
-  box-shadow:
-    0 12px 30px
-    rgba(201, 168, 76, 0.18);
+  box-shadow: 0 12px 30px rgba(201, 168, 76, 0.18);
 }
-
 
 .instagram-follow-btn:hover i {
   color: #ffffff;
 }
 
-.instagram-stories-header{
+.instagram-stories-header {
   gap: 30px;
 }
 
@@ -4505,7 +4446,6 @@ button {
    ============================================================ */
 
 @media (max-width: 900px) {
-
   .instagram-reels-section {
     padding: 90px 0 100px;
   }
@@ -4522,16 +4462,13 @@ button {
 
     animation-duration: 48s;
   }
-
 }
-
 
 /* ============================================================
    MOBILE
    ============================================================ */
 
 @media (max-width: 600px) {
-
   .instagram-reels-section {
     padding: 75px 0 85px;
   }
@@ -4554,20 +4491,16 @@ button {
 
     animation-duration: 42s;
   }
-
 }
-
 
 /* ============================================================
    REDUCED MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
-
   .reels-track {
     animation: none;
   }
-
 }
 .reels-viewport {
   width: 100%;
@@ -4575,23 +4508,21 @@ button {
   overflow: hidden;
   position: relative;
 
-  -webkit-mask-image:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      #000 6%,
-      #000 94%,
-      transparent 100%
-    );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
 
-  mask-image:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      #000 6%,
-      #000 94%,
-      transparent 100%
-    );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
 }
 @media (max-width: 600px) {
   .reels-viewport {
