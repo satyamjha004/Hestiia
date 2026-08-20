@@ -4148,7 +4148,7 @@ const hestiiaFeaturedMenu = [
     description:
       "Creamy pasta tossed in a rich, silky white sauce.",
     image:
-      "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=1200&q=85"
+      "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
 
   {
@@ -4158,7 +4158,7 @@ const hestiiaFeaturedMenu = [
     description:
       "Signature noodles tossed with fresh vegetables and HESTIIA seasoning.",
     image:
-      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=85"
+      "https://images.unsplash.com/photo-1607328874071-45a9cd600644?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
 
   {
