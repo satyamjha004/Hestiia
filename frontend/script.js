@@ -1347,100 +1347,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   renderMenuCategories();
   renderFullMenu(menuData);
-  // ============================================================
-  // HOME PAGE — FEATURED MENU
-  // ============================================================
+  
+  
 
-  const featuredMenu = [
-    {
-      name: "Paneer Tikka Pizza",
-      price: 279,
-      description: "Roasted paneer with onion, tomato & capsicum.",
-      image: "images/menu/paneer-pizza.jpg",
-    },
-
-    {
-      name: "Kadhai Paneer",
-      price: 275,
-      description: "Paneer cooked with traditional kadhai spices.",
-      image: "images/menu/kadhai-paneer.jpg",
-    },
-
-    {
-      name: "Hestia Special Noodles",
-      price: 219,
-      description: "Our signature special noodles.",
-      image: "images/menu/special-noodles.jpg",
-    },
-
-    {
-      name: "Hestia Special Mocktail",
-      price: 199,
-      description: "Three-flavour signature mocktail.",
-      image: "images/menu/special-mocktail.jpg",
-    },
-
-    {
-      name: "Chocolate Shake",
-      price: 149,
-      description: "Thick and creamy chocolate shake.",
-      image: "images/menu/chocolate-shake.jpg",
-    },
-
-    {
-      name: "Hot Brownie With Vanilla",
-      price: 149,
-      description: "Warm brownie served with vanilla ice cream.",
-      image: "images/menu/brownie-vanilla.jpg",
-    },
-  ];
-
-  const featuredMenuGrid = document.getElementById("featuredMenuGrid");
-
-  if (featuredMenuGrid) {
-    featuredMenuGrid.innerHTML = featuredMenu
-      .map(
-        (item) => `
-
-    <article class="featured-food-card">
-
-      <div class="featured-food-image">
-
-        <img
-          src="${item.image}"
-          alt="${item.name}"
-          loading="lazy"
-          onerror="this.src='images/menu/default-food.jpg'"
-        >
-
-        <span class="featured-food-price">
-          ₹${item.price}
-        </span>
-
-      </div>
-
-      <div class="featured-food-content">
-
-        <h3>${item.name}</h3>
-
-        <p>${item.description}</p>
-
-        <button
-          class="add-cart-btn"
-          data-name="${item.name}"
-          data-price="${item.price}"
-        >
-          Add to Order
-        </button>
-
-      </div>
-
-    </article>
-
-  `,
-      )
-      .join("");
-  }
 
   // ─── THREE.JS PARTICLES ──────────────────────────────────
   (function initParticles() {
@@ -1540,143 +1449,9 @@ function processInstagramEmbeds() {
 window.addEventListener("load", function () {
   setTimeout(processInstagramEmbeds, 1000);
 });
-// ============================================================
-// HESTIIA — FEATURED MENU RENDER
-// HOME PAGE
-// ============================================================
-
-const featuredMenu = [
-  {
-    name: "Paneer Tikka Pizza",
-    category: "Pizza",
-    price: 279,
-    description: "Onion, tomato, capsicum and roasted paneer.",
-    image:
-      "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=900&q=85",
-  },
-
-  {
-    name: "Paneer Tikka",
-    category: "Tandoor",
-    price: 239,
-    description: "Char-grilled paneer with aromatic spices.",
-    image:
-      "https://images.unsplash.com/photo-1666001120694-3ebe8fd207be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-
-  {
-    name: "Veg Biryani",
-    category: "Biryani",
-    price: 189,
-    description: "Fragrant basmati rice with vegetables and spices.",
-    image:
-      "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=900&q=85",
-  },
-
-  {
-    name: "Cheese Burger",
-    category: "Burger",
-    price: 109,
-    description: "Vegetarian burger loaded with melted cheese.",
-    image:
-      "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=900&q=85",
-  },
-
-  {
-    name: "White Sauce Pasta",
-    category: "Pasta",
-    price: 249,
-    description: "Creamy pasta prepared with rich white sauce.",
-    image:
-      "https://images.unsplash.com/photo-1662197480393-2a82030b7b83?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-
-  {
-    name: "Hestia Special Noodles",
-    category: "Chinese",
-    price: 219,
-    description: "Signature noodles tossed with fresh vegetables.",
-    image:
-      "https://images.unsplash.com/photo-1680359873713-f7f4768fc2e5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-
-  {
-    name: "Hestia Special Mocktail",
-    category: "Mocktail",
-    price: 199,
-    description: "Refreshing three-flavour signature mix.",
-    image:
-      "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=900&q=85",
-  },
-
-  {
-    name: "Chocolate Shake",
-    category: "Shake",
-    price: 149,
-    description: "Rich, creamy and indulgent chocolate shake.",
-    image:
-      "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=900&q=85",
-  },
-];
-
-// ============================================================
-// RENDER FEATURED MENU
-// ============================================================
-
-function renderFeaturedMenu() {
-  const grid = document.getElementById("featuredMenuGrid");
-
-  if (!grid) return;
-
-  grid.innerHTML = featuredMenu
-    .map(
-      (item) => `
-        <article class="featured-menu-card">
-
-          <div class="featured-menu-image">
-
-            <img
-              src="${item.image}"
-              alt="${item.name}"
-              loading="lazy"
-            />
-
-            <span class="featured-menu-price">
-              ₹${item.price}
-            </span>
-
-          </div>
 
 
-          <div class="featured-menu-content">
 
-            <span class="featured-menu-category">
-              ${item.category}
-            </span>
-
-            <h3>
-              ${item.name}
-            </h3>
-
-            <p>
-              ${item.description}
-            </p>
-
-          </div>
-
-        </article>
-      `,
-    )
-    .join("");
-}
-
-// ============================================================
-// INITIALIZE FEATURED MENU
-// ============================================================
-
-document.addEventListener("DOMContentLoaded", () => {
-  renderFeaturedMenu();
-});
 
 /* ============================================================
    HESTIIA — INSTAGRAM REELS VIDEO CONTROL
@@ -4318,76 +4093,142 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+/* ============================================================
+   HESTIIA — PREMIUM FEATURED MENU
+   UNSPLASH FOOD IMAGES
+   ============================================================ */
+
+const hestiiaFeaturedMenu = [
+
+  {
+    name: "Paneer Tikka Pizza",
+    category: "Signature Pizza",
+    price: 279,
+    description:
+      "Roasted paneer, onion, tomato and capsicum on a golden cheesy base.",
+    image:
+      "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1200&q=85"
+  },
+
+  {
+    name: "Paneer Tikka",
+    category: "Tandoor",
+    price: 239,
+    description:
+      "Char-grilled paneer marinated with aromatic Indian spices.",
+    image:
+      "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=1200&q=85"
+  },
+
+  {
+    name: "Veg Biryani",
+    category: "Biryani",
+    price: 189,
+    description:
+      "Fragrant basmati rice layered with vegetables and traditional spices.",
+    image:
+      "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1200&q=85"
+  },
+
+  {
+    name: "Cheese Burger",
+    category: "Burger",
+    price: 109,
+    description:
+      "Crispy vegetarian patty layered with melted cheese and fresh greens.",
+    image:
+      "https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=1200&q=85"
+  },
+
+  {
+    name: "White Sauce Pasta",
+    category: "Pasta",
+    price: 249,
+    description:
+      "Creamy pasta tossed in a rich, silky white sauce.",
+    image:
+      "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=1200&q=85"
+  },
+
+  {
+    name: "Hestia Special Noodles",
+    category: "Chinese",
+    price: 219,
+    description:
+      "Signature noodles tossed with fresh vegetables and HESTIIA seasoning.",
+    image:
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=85"
+  },
+
+  {
+    name: "Hestia Special Mocktail",
+    category: "Mocktail",
+    price: 199,
+    description:
+      "A refreshing three-flavour signature creation served chilled.",
+    image:
+      "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1200&q=85"
+  },
+
+  {
+    name: "Chocolate Shake",
+    category: "Shake",
+    price: 149,
+    description:
+      "Thick, creamy chocolate shake made for the perfect indulgence.",
+    image:
+      "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1200&q=85"
+  }
+
+];
+
+
+/* ============================================================
+   RENDER PREMIUM FEATURED MENU
+   ============================================================ */
+
 function renderHestiiaFeaturedMenu() {
 
   const grid =
-    document.getElementById(
-      "featuredMenuGrid"
-    );
+    document.getElementById("featuredMenuGrid");
 
   if (!grid) return;
 
 
-  /*
-   * Home page ke liye selected
-   * popular dishes
-   */
+  grid.innerHTML = hestiiaFeaturedMenu
+    .map((item, index) => {
 
-  const featuredNames = [
+      return `
 
-    "Paneer Tikka",
-    "Paneer Butter Masala",
-    "Hestiia Special",
-    "Kadhai Paneer",
-    "Chinese Platter",
-    "Tandoori Platter",
-    "Paneer Tikka Pizza",
-    "Hestia Special Shake"
+        <article
+          class="featured-menu-card"
+          style="animation-delay:${index * 80}ms"
+        >
 
-  ];
-
-
-  const featured =
-    featuredNames
-      .map(name =>
-        hestiiaRestaurantMenu.find(
-          item => item.name === name
-        )
-      )
-      .filter(Boolean);
-
-
-  grid.innerHTML =
-    featured
-      .map(item => `
-
-        <article class="featured-menu-card">
-
+          <!-- IMAGE -->
           <div class="featured-menu-image">
 
             <img
               src="${item.image}"
-              alt="${item.name}"
-              loading="lazy"
+              alt="${item.name} — HESTIIA Restaurant"
+              loading="${index < 4 ? "eager" : "lazy"}"
+              decoding="async"
             />
 
-            <span
-              class="featured-menu-price"
-            >
+            <!-- PRICE -->
+            <span class="featured-menu-price">
               ₹${item.price}
             </span>
 
           </div>
 
 
-          <div
-            class="featured-menu-content"
-          >
+          <!-- CONTENT -->
+          <div class="featured-menu-content">
 
-            <span
-              class="featured-menu-category"
-            >
-              ${item.categoryName}
+            <span class="featured-menu-category">
+              ${item.category}
             </span>
 
             <h3>
@@ -4398,20 +4239,302 @@ function renderHestiiaFeaturedMenu() {
               ${item.description}
             </p>
 
+
+            <!-- BOTTOM -->
+            <div class="featured-menu-add">
+
+              <span class="featured-menu-add-label">
+                Pure Vegetarian
+              </span>
+
+              <button
+                type="button"
+                class="featured-menu-order"
+                data-name="${item.name}"
+                data-price="${item.price}"
+                aria-label="Add ${item.name} to order"
+              >
+
+                <span>Add</span>
+
+                <i
+                  class="fas fa-plus"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+            </div>
+
           </div>
 
         </article>
 
-      `)
-      .join("");
+      `;
+
+    })
+    .join("");
+
+
+  /* ============================================================
+     ADD TO ORDER EVENTS
+     ============================================================ */
+
+  grid
+    .querySelectorAll(".featured-menu-order")
+    .forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const name =
+          button.dataset.name;
+
+        const price =
+          Number(button.dataset.price);
+
+
+        /* Existing cart system */
+        if (
+          typeof addHestiiaMenuItem ===
+          "function"
+        ) {
+
+          const index =
+            findHestiiaMenuItemIndex(name);
+
+          if (index !== -1) {
+
+            addHestiiaMenuItem(index);
+
+            return;
+
+          }
+
+        }
+
+
+        /* Fallback localStorage cart */
+
+        let cart = [];
+
+        try {
+
+          cart =
+            JSON.parse(
+              localStorage.getItem(
+                "hestiia_cart"
+              ) || "[]"
+            );
+
+        } catch (error) {
+
+          cart = [];
+
+        }
+
+
+        const existing =
+          cart.find(
+            (item) =>
+              item.name === name
+          );
+
+
+        if (existing) {
+
+          existing.quantity =
+            (existing.quantity || 1) + 1;
+
+        } else {
+
+          cart.push({
+
+            name: name,
+
+            price: price,
+
+            quantity: 1
+
+          });
+
+        }
+
+
+        localStorage.setItem(
+          "hestiia_cart",
+          JSON.stringify(cart)
+        );
+
+
+        showFeaturedMenuToast(
+          `${name} added to your order`
+        );
+
+      });
+
+    });
 
 }
 
-document.addEventListener("DOMContentLoaded", () => {
 
-  renderHestiiaMenu();
+/* ============================================================
+   FIND MENU ITEM
+   ============================================================ */
 
-  renderHestiiaFeaturedMenu();
+function findHestiiaMenuItemIndex(name) {
 
-  // tumhara existing JS...
-});
+  if (
+    typeof hestiiaRestaurantMenu ===
+    "undefined"
+  ) {
+    return -1;
+  }
+
+
+  return hestiiaRestaurantMenu
+    .findIndex(
+      (item) =>
+        item.name === name
+    );
+
+}
+
+
+/* ============================================================
+   PREMIUM TOAST
+   ============================================================ */
+
+function showFeaturedMenuToast(message) {
+
+  let toast =
+    document.getElementById(
+      "featuredMenuToast"
+    );
+
+
+  if (!toast) {
+
+    toast =
+      document.createElement("div");
+
+    toast.id =
+      "featuredMenuToast";
+
+
+    toast.innerHTML = `
+      <i class="fas fa-check-circle"></i>
+      <span></span>
+    `;
+
+
+    Object.assign(
+      toast.style,
+      {
+
+        position: "fixed",
+
+        left: "50%",
+
+        bottom: "28px",
+
+        zIndex: "999999",
+
+        display: "flex",
+
+        alignItems: "center",
+
+        gap: "10px",
+
+        padding: "13px 20px",
+
+        border:
+          "1px solid rgba(216,180,106,.35)",
+
+        borderRadius: "999px",
+
+        background:
+          "rgba(18,17,14,.94)",
+
+        color: "#f0d59a",
+
+        boxShadow:
+          "0 20px 60px rgba(0,0,0,.45)",
+
+        backdropFilter:
+          "blur(18px)",
+
+        fontFamily:
+          "Poppins, sans-serif",
+
+        fontSize: "12px",
+
+        fontWeight: "500",
+
+        transform:
+          "translate(-50%, 25px)",
+
+        opacity: "0",
+
+        transition:
+          "all .35s ease"
+
+      }
+    );
+
+
+    document.body.appendChild(toast);
+
+  }
+
+
+  const text =
+    toast.querySelector("span");
+
+  if (text) {
+
+    text.textContent =
+      message;
+
+  }
+
+
+  requestAnimationFrame(() => {
+
+    toast.style.opacity = "1";
+
+    toast.style.transform =
+      "translate(-50%, 0)";
+
+  });
+
+
+  clearTimeout(
+    toast._timeout
+  );
+
+
+  toast._timeout =
+    setTimeout(() => {
+
+      toast.style.opacity = "0";
+
+      toast.style.transform =
+        "translate(-50%, 25px)";
+
+    }, 2600);
+
+}
+
+
+/* ============================================================
+   INITIALIZE
+   ============================================================ */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    renderHestiiaFeaturedMenu();
+
+  }
+);
