@@ -176,46 +176,6 @@
       <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <!-- ===== AI CHATBOT ===== -->
-    <button
-      class="chat-float"
-      id="chatToggle"
-      aria-label="Open AI chat assistant"
-    >
-      <i class="fas fa-comment-dots" aria-hidden="true"></i>
-    </button>
-    <div
-      class="chat-widget"
-      id="chatWidget"
-      role="dialog"
-      aria-label="AI Assistant chat"
-    >
-      <div class="chat-header">
-        <span
-          ><i class="fas fa-robot" aria-hidden="true"></i> AI Assistant</span
-        >
-        <button class="close-chat" id="closeChat" aria-label="Close chat">
-          &times;
-        </button>
-      </div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="msg bot">
-          👋 Welcome to HESTIIA! How can I assist you today?
-        </div>
-      </div>
-      <div class="chat-options" id="chatOptions">
-        <button class="opt-btn" data-action="book">
-          <i class="fas fa-calendar-check" aria-hidden="true"></i> Book a Table
-        </button>
-        <button class="opt-btn" data-action="menu">
-          <i class="fas fa-utensils" aria-hidden="true"></i> View Menu
-        </button>
-        <button class="opt-btn" data-action="contact">
-          <i class="fas fa-envelope" aria-hidden="true"></i> Contact Us
-        </button>
-      </div>
-    </div>
-
     <!-- ===== WHATSAPP FLOAT ===== -->
     <a
       href="https://wa.me/916392693457?text=Hello%20HESTIIA%2C%20I%20would%20like%20to%20know%20more%20about%20your%20restaurant."
@@ -308,11 +268,17 @@
           aria-label="Instagram"
           ><i class="fab fa-instagram" aria-hidden="true"></i
         ></a>
-        <a href="#" aria-label="Facebook"
+        <a
+          href="https://www.facebook.com/profile.php?id=100090424925903"
+          target="_blank"
+          aria-label="Facebook"
           ><i class="fab fa-facebook-f" aria-hidden="true"></i
         ></a>
-        <a href="#" aria-label="YouTube"
-          ><i class="fab fa-youtube" aria-hidden="true"></i
+        <a
+          href="https://twitter.com/hestiiarestaurant"
+          target="_blank"
+          aria-label="Twitter"
+          ><i class="fab fa-twitter" aria-hidden="true"></i
         ></a>
       </div>
     </div>
@@ -409,19 +375,10 @@
       <!-- Hero -->
       <section class="hero" id="hero" aria-label="Hero banner">
         <video class="hero-video" autoplay muted loop playsinline>
-          <source
-            src="images/Hall.jpeg"
-            type="video/mp4"
-          />
+          <source src="images/Hall.jpeg" type="video/mp4" />
         </video>
         <div class="hero-slider-overlay">
           <div class="hero-slider-container" id="heroSliderContainer">
-           
-            <img
-              class="hero-slide-img"
-              src="images/counter.jpeg"
-              alt="Food plating"
-            />
             <img
               class="hero-slide-img"
               src="images/Hall.jpeg"
@@ -432,9 +389,15 @@
               src="images/counter.jpeg"
               alt="Food plating"
             />
+
             <img
               class="hero-slide-img"
-              src="images/Hall.jpeg"
+              src="images/image 3.webp"
+              alt="Food plating"
+            />
+            <img
+              class="hero-slide-img"
+              src="images/image 6.webp"
               alt="Dining table"
             />
           </div>
@@ -450,11 +413,18 @@
             aria-label="Instagram"
             ><i class="fab fa-instagram"></i
           ></a>
-          <a href="#" aria-label="Facebook"
+          <a
+            href="https://www.facebook.com/profile.php?id=100090424925903"
+            target="_blank"
+            aria-label="Facebook"
             ><i class="fab fa-facebook-f"></i
           ></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a
+            href="https://twitter.com/hestiiarestaurant"
+            target="_blank"
+            aria-label="Twitter"
+            ><i class="fab fa-x-twitter"></i
+          ></a>
           <span class="social-line"></span>
         </div>
 
@@ -476,329 +446,365 @@
           <div class="line"></div>
         </div>
       </section>
-
-      <!-- Instagram Stories
-      
-      <section
-        class="section instagram-stories-section"
-        aria-label="Instagram stories"
-       >
-        <div class="container">
-          <span class="section-label">✦ Instagram Stories</span>
-          <h2 class="section-title">
-            Follow Us <span>@hestiiarestaurant</span>
-          </h2>
-          <div class="insta-stories">
-            <div class="stories-track">
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80"
-                  alt="Dining story"
-                  loading="lazy"
-                /><span class="story-label">🍽️ Dining</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"
-                  alt="Special story"
-                  loading="lazy"
-                /><span class="story-label">🥘 Special</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&q=80"
-                  alt="Lobster story"
-                  loading="lazy"
-                /><span class="story-label">🦞 Lobster</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&q=80"
-                  alt="Risotto story"
-                  loading="lazy"
-                /><span class="story-label">🍝 Risotto</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80"
-                  alt="Ambiance story"
-                  loading="lazy"
-                /><span class="story-label">✨ Ambiance</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=400&q=80"
-                  alt="Wine story"
-                  loading="lazy"
-                /><span class="story-label">🍷 Wine</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80"
-                  alt="Dining story"
-                  loading="lazy"
-                /><span class="story-label">🍽️ Dining</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"
-                  alt="Special story"
-                  loading="lazy"
-                /><span class="story-label">🥘 Special</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&q=80"
-                  alt="Lobster story"
-                  loading="lazy"
-                /><span class="story-label">🦞 Lobster</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&q=80"
-                  alt="Risotto story"
-                  loading="lazy"
-                /><span class="story-label">🍝 Risotto</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80"
-                  alt="Ambiance story"
-                  loading="lazy"
-                /><span class="story-label">✨ Ambiance</span>
-              </div>
-              <div class="story-item">
-                <img
-                  src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=400&q=80"
-                  alt="Wine story"
-                  loading="lazy"
-                /><span class="story-label">🍷 Wine</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
- -->
-<!-- ============================================================
-     HESTIIA — INSTAGRAM STORIES
+      <!-- ============================================================
+     HESTIIA — FEATURED MENU
+     HOME PAGE
      ============================================================ -->
 
-<section
-  class="instagram-stories-section"
-  id="instagram-stories"
-  aria-label="Instagram Stories"
->
-
-  <div class="instagram-stories-header">
-
-    <span class="section-label">
-      ✦ Instagram
-    </span>
-
-    <h2 class="section-title">
-      Instagram <span>Stories</span>
-    </h2>
-
-    <p class="instagram-follow-text">
-      Follow Us
-      <a
-        href="https://www.instagram.com/hestiiarestaurant/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        @hestiiarestaurant
-      </a>
-    </p>
-
-  </div>
-
-
-  <!-- ==========================================================
-       REELS SLIDER
-       ========================================================== -->
-
-  <div class="reels-viewport">
-
-    <div class="reels-track">
-
-
-      <!-- REEL 1 -->
-      <div class="reel-card">
-
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/DSU8DkWkgjv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          data-instgrm-version="14">
-        </blockquote>
-
-      </div>
-
-
-      <!-- REEL 2 -->
-      <div class="reel-card">
-
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/C7OkxIdSaC6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          data-instgrm-version="14">
-        </blockquote>
-
-      </div>
-
-
-      <!-- REEL 3 -->
-      <div class="reel-card">
-
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/C7eOlKTSA2k/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          data-instgrm-version="14">
-        </blockquote>
-
-      </div>
-
-
-      <!-- REEL 4 -->
-      <div class="reel-card">
-
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/DblL0RziDKn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          data-instgrm-version="14">
-        </blockquote>
-
-      </div>
-
-
-      <!-- ========================================================
-           DUPLICATE SET
-           Required for seamless infinite animation
-           ======================================================== -->
-
-      <div class="reel-card">
-
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/DSU8DkWkgjv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          data-instgrm-version="14">
-        </blockquote>
-
-      </div>
-
-
-      <div class="reel-card">
-
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/C7OkxIdSaC6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          data-instgrm-version="14">
-        </blockquote>
-
-      </div>
-
-
-      <div class="reel-card">
-
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/C7eOlKTSA2k/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          data-instgrm-version="14">
-        </blockquote>
-
-      </div>
-
-
-      <div class="reel-card">
-
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/DblL0RziDKn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          data-instgrm-version="14">
-        </blockquote>
-
-      </div>
-
-    </div>
-
-  </div>
-
-<!-- Instagram Official Embed Script -->
-
-<script
-  async
-  src="https://www.instagram.com/embed.js">
-</script>
-      <!-- Gallery Section -->
-      <section class="section gallery-section" aria-label="Gallery">
+      <section class="featured-menu-section" id="featured-menu">
         <div class="container">
-          <span class="section-label">✦ Gallery</span>
-          <h2 class="section-title">Visual <span>Storytelling</span></h2>
-          <p class="section-desc">
-            A glimpse into the artistry, ambiance, and emotion of HESTIIA.
-          </p>
-          <div class="gallery-grid" style="margin-top: 20px">
-            <div class="item reveal-scale">
-              <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
-                alt="Restaurant ambiance"
-                loading="lazy"
-              />
-              <div class="overlay"><span>Ambiance</span></div>
-            </div>
-            <div class="item reveal-scale" style="transition-delay: 0.1s">
-              <img
-                src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=600&q=80"
-                alt="Food plating"
-                loading="lazy"
-              />
-              <div class="overlay"><span>Plating</span></div>
-            </div>
-            <div class="item reveal-scale" style="transition-delay: 0.2s">
-              <img
-                src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80"
-                alt="Lobster dish"
-                loading="lazy"
-              />
-              <div class="overlay"><span>Lobster</span></div>
-            </div>
-            <div class="item reveal-scale" style="transition-delay: 0.3s">
-              <img
-                src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80"
-                alt="Wine selection"
-                loading="lazy"
-              />
-              <div class="overlay"><span>Wine</span></div>
-            </div>
-            <div class="item reveal-scale" style="transition-delay: 0.4s">
-              <img
-                src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80"
-                alt="Wagyu dish"
-                loading="lazy"
-              />
-              <div class="overlay"><span>Wagyu</span></div>
-            </div>
-            <div class="item reveal-scale" style="transition-delay: 0.5s">
-              <img
-                src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80"
-                alt="Risotto dish"
-                loading="lazy"
-              />
-              <div class="overlay"><span>Risotto</span></div>
-            </div>
+          <!-- HEADER -->
+          <div class="featured-menu-header">
+            <span class="section-label"> ✦ HESTIIA'S FAVOURITES </span>
+
+            <h2 class="section-title">
+              Taste Our <span>Signature Dishes</span>
+            </h2>
+
+            <p class="section-desc">
+              A handpicked selection of HESTIIA's most loved dishes, crafted
+              with fresh ingredients and our signature touch.
+            </p>
           </div>
-          <div class="view-menu-wrap">
-            <button class="btn-primary" onclick="navigateTo('gallery')">
-              <span>View Our Gallery</span>
+
+          <!-- FEATURED FOOD GRID -->
+          <div class="featured-menu-grid" id="featuredMenuGrid">
+            <!-- JavaScript will render food cards here -->
+          </div>
+
+          <!-- VIEW FULL MENU -->
+          <div class="featured-menu-footer">
+            <button
+              type="button"
+              class="btn-primary featured-menu-btn"
+              onclick="navigateTo('menu')"
+            >
+              <span>Explore Full Menu</span>
+
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
         </div>
       </section>
+      <!-- ============================================================
+     HESTIIA — INSTAGRAM REELS
+     CLEAN VIDEO ONLY
+     ============================================================ -->
 
+      <section
+        class="instagram-reels-section"
+        id="instagram-stories"
+        aria-label="HESTIIA Instagram Reels"
+      >
+        <!-- Section Header -->
+        <div class="instagram-reels-header">
+          <span class="instagram-reels-label"> ✦ Instagram </span>
+
+          <h2 class="instagram-reels-title">HESTIIA <span>Moments</span></h2>
+
+          <p class="instagram-reels-subtitle">
+            A glimpse of our food, ambience & dining experience.
+          </p>
+        </div>
+
+        <!-- ==========================================================
+       REELS SLIDER
+       ========================================================== -->
+
+        <div class="reels-viewport">
+          <div class="reels-track" id="reelsTrack">
+            <!-- ================= REEL 1 ================= -->
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 1.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <!-- ================= REEL 2 ================= -->
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 2.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <!-- ================= REEL 3 ================= -->
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 3.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <!-- ================= REEL 4 ================= -->
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 4.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <!-- ================= REEL 5 ================= -->
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 5.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <!-- ========================================================
+           DUPLICATE SET
+           For seamless infinite slider
+           ======================================================== -->
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 1.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 2.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 3.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 4.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+
+            <div class="reel-card">
+              <video
+                class="reel-video"
+                src="videos/Video 5.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+
+              <div class="reel-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instagram Button -->
+
+        <div class="instagram-reels-footer">
+          <a
+            href="https://www.instagram.com/hestiiarestaurant/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="instagram-follow-btn"
+          >
+            <i class="fab fa-instagram"></i>
+
+            <span>Follow @hestiiarestaurant</span>
+          </a>
+        </div>
+      </section>
+      <!-- ============================================================
+     HESTIIA — GALLERY PREVIEW
+     ============================================================ -->
+
+      <section
+        class="section gallery-section gallery-preview-section"
+        aria-label="HESTIIA Gallery"
+      >
+        <div class="container">
+          <span class="section-label">✦ Gallery</span>
+
+          <h2 class="section-title">Visual <span>Storytelling</span></h2>
+
+          <p class="section-desc">
+            Step inside HESTIIA and experience the atmosphere, elegance, and
+            details that make every visit memorable.
+          </p>
+
+          <!-- Gallery Preview -->
+
+          <div class="gallery-preview-grid">
+            <button
+              class="gallery-preview-item gallery-preview-large"
+              type="button"
+              onclick="openGalleryPreview(0)"
+              aria-label="View HESTIIA gallery image"
+            >
+              <img
+                src="images/Hall.jpeg"
+                alt="HESTIIA restaurant ambience"
+                loading="lazy"
+              />
+              <span class="gallery-image-shine"></span>
+            </button>
+
+            <button
+              class="gallery-preview-item"
+              type="button"
+              onclick="openGalleryPreview(1)"
+              aria-label="View HESTIIA gallery image"
+            >
+              <img
+                src="images/counter.jpeg"
+                alt="HESTIIA restaurant counter"
+                loading="lazy"
+              />
+              <span class="gallery-image-shine"></span>
+            </button>
+
+            <button
+              class="gallery-preview-item"
+              type="button"
+              onclick="openGalleryPreview(2)"
+              aria-label="View HESTIIA gallery image"
+            >
+              <img
+                src="images/image 7.webp"
+                alt="HESTIIA restaurant interior"
+                loading="lazy"
+              />
+              <span class="gallery-image-shine"></span>
+            </button>
+
+            <button
+              class="gallery-preview-item"
+              type="button"
+              onclick="openGalleryPreview(3)"
+              aria-label="View HESTIIA gallery image"
+            >
+              <img
+                src="images/image 4.webp"
+                alt="HESTIIA dining ambience"
+                loading="lazy"
+              />
+              <span class="gallery-image-shine"></span>
+            </button>
+
+            <button
+              class="gallery-preview-item"
+              type="button"
+              onclick="openGalleryPreview(4)"
+              aria-label="View HESTIIA gallery image"
+            >
+              <img
+                src="images/image 6.webp"
+                alt="HESTIIA restaurant atmosphere"
+                loading="lazy"
+              />
+              <span class="gallery-image-shine"></span>
+            </button>
+          </div>
+
+          <!-- View All Gallery -->
+
+          <div class="gallery-preview-action">
+            <button
+              class="gallery-view-btn"
+              type="button"
+              onclick="navigateTo('gallery')"
+            >
+              <span>View Our Gallery</span>
+
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
       <!-- Order Online Section -->
       <section class="order-section" aria-label="Order Online">
         <div class="container">
           <span class="section-label">✦ Order Online</span>
-          <h2 class="section-title" style="margin-bottom: 8px">
+          <h2
+            class="section-title"
+            style="
+              margin-bottom: 8px;
+              color: var(--text-primary);
+              font-weight: 500;
+              font-size: 2.2rem;
+            "
+          >
             Get Your Favorite <span>Dishes</span> Delivered
           </h2>
           <p class="section-desc" style="margin: 0 auto 16px; max-width: 600px">
@@ -810,25 +816,25 @@
             <img src="images/swiggy.png" alt="Swiggy" loading="lazy" />
           </div>
           <div class="order-platforms">
-           <a
-  href="https://www.zomato.com/kanpur/hestiia-restaurant-shyam-nagar/order"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="delivery-btn zomato-btn"
->
-  <i class="fas fa-utensils"></i>
-  Order on Zomato
-</a>
+            <a
+              href="https://www.zomato.com/kanpur/hestiia-restaurant-shyam-nagar/order"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="delivery-btn zomato-btn"
+            >
+              <i class="fas fa-utensils"></i>
+              Order on Zomato
+            </a>
 
-<a
-  href="https://www.swiggy.com/restaurants/kanpur/shyam-nagar/hestiia-restaurant-1240905/dineout"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="delivery-btn swiggy-btn"
->
-  <i class="fas fa-shopping-bag"></i>
-  Order on Swiggy
-</a>
+            <a
+              href="https://www.swiggy.com/restaurants/kanpur/shyam-nagar/hestiia-restaurant-1240905/dineout"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="delivery-btn swiggy-btn"
+            >
+              <i class="fas fa-shopping-bag"></i>
+              Order on Swiggy
+            </a>
           </div>
         </div>
       </section>
@@ -906,7 +912,185 @@
         </div>
       </section>
     </main>
+    <!-- ============================================================
+     PAGE: MENU
+     HESTIIA — FULL RESTAURANT MENU
+     ============================================================ -->
 
+    <div class="page" id="page-menu">
+      <!-- MENU HERO -->
+      <section class="menu-hero">
+        <div class="menu-hero-content">
+          <span class="menu-eyebrow"> ✦ HESTIIA RESTAURANT </span>
+
+          <h1>Our <span>Menu</span></h1>
+
+          <p>
+            Explore our complete vegetarian menu, freshly prepared with quality
+            ingredients and HESTIIA's signature touch.
+          </p>
+
+          <div class="menu-hero-divider"></div>
+        </div>
+      </section>
+
+      <!-- MENU BODY -->
+      <section class="menu-main-section">
+        <div class="container">
+          <div class="menu-heading">
+            <span class="section-label"> ✦ PURE VEGETARIAN </span>
+
+            <h2 class="section-title">Discover Our <span>Menu</span></h2>
+
+            <p class="section-desc">
+              From quick bites and handcrafted pizzas to authentic North Indian
+              favourites, Chinese delicacies, refreshing beverages and desserts.
+            </p>
+          </div>
+
+          <!-- SEARCH -->
+          <div class="menu-search-box">
+            <i class="fas fa-search"></i>
+
+            <input
+              type="text"
+              id="menuSearchInput"
+              placeholder="Search dishes..."
+              autocomplete="off"
+            />
+
+            <button
+              type="button"
+              id="menuSearchClear"
+              aria-label="Clear search"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+
+          <!-- CATEGORY TABS -->
+          <div class="menu-category-scroll" id="menuCategoryScroll">
+            <button class="menu-category active" data-menu-category="all">
+              All
+            </button>
+
+            <button class="menu-category" data-menu-category="sandwiches">
+              Sandwiches
+            </button>
+
+            <button class="menu-category" data-menu-category="burgers">
+              Burgers
+            </button>
+
+            <button class="menu-category" data-menu-category="pizza">
+              Pizza
+            </button>
+
+            <button class="menu-category" data-menu-category="pasta">
+              Pasta
+            </button>
+
+            <button class="menu-category" data-menu-category="soups">
+              Soups
+            </button>
+
+            <button class="menu-category" data-menu-category="salads-raita">
+              Salads & Raita
+            </button>
+
+            <button class="menu-category" data-menu-category="kebabs">
+              Kebabs & Starters
+            </button>
+
+            <button class="menu-category" data-menu-category="chinese-starters">
+              Chinese Starters
+            </button>
+
+            <button class="menu-category" data-menu-category="chinese-main">
+              Chinese Rice & Noodles
+            </button>
+
+            <button class="menu-category" data-menu-category="paneer">
+              Paneer
+            </button>
+
+            <button class="menu-category" data-menu-category="veg-main">
+              Veg Main Course
+            </button>
+
+            <button class="menu-category" data-menu-category="dal">Dal</button>
+
+            <button class="menu-category" data-menu-category="rice">
+              Rice & Biryani
+            </button>
+
+            <button class="menu-category" data-menu-category="breads">
+              Breads
+            </button>
+
+            <button class="menu-category" data-menu-category="tandoori">
+              Tandoori
+            </button>
+
+            <button class="menu-category" data-menu-category="sides">
+              Sides & Snacks
+            </button>
+
+            <button class="menu-category" data-menu-category="juices">
+              Juices
+            </button>
+
+            <button class="menu-category" data-menu-category="shakes">
+              Shakes
+            </button>
+
+            <button class="menu-category" data-menu-category="beverages">
+              Beverages
+            </button>
+
+            <button class="menu-category" data-menu-category="mocktails">
+              Mocktails
+            </button>
+
+            <button class="menu-category" data-menu-category="desserts">
+              Desserts
+            </button>
+
+            <button class="menu-category" data-menu-category="extras">
+              Extras
+            </button>
+          </div>
+
+          <!-- RESULT -->
+          <div class="menu-result-row">
+            <span id="menuResultText"> Showing all dishes </span>
+
+            <span class="menu-veg-label">
+              <span></span>
+              Pure Vegetarian
+            </span>
+          </div>
+
+          <!-- MENU GRID -->
+          <div class="restaurant-menu-grid" id="restaurantMenuGrid"></div>
+
+          <!-- EMPTY -->
+          <div class="menu-empty" id="menuEmpty">
+            <div class="menu-empty-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+
+            <h3>No dish found</h3>
+
+            <p>Try searching for another dish.</p>
+
+            <button type="button" onclick="resetRestaurantMenu()">
+              View All Dishes
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
     <!-- ============================================================
     PAGE: ABOUT
     ============================================================ -->
@@ -916,7 +1100,7 @@
           <div class="grid-2">
             <div class="about-image reveal-left">
               <img
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80"
+                src="images/Hall.jpeg"
                 alt="About Hestiia Restaurant"
                 loading="lazy"
               />
@@ -1096,133 +1280,102 @@
     </div>
 
     <!-- ============================================================
-    PAGE: MENU
-    ============================================================ -->
-    <div class="page" id="page-menu">
-      <section
-        class="section"
-        style="padding-top: 40px; background: var(--bg-primary)"
-      >
-        <div class="container">
-          <span class="section-label">✦ Explore</span>
-          <h2 class="section-title">Our <span>Menu</span></h2>
-          <p class="section-desc">
-            A curated selection of our finest vegetarian dishes.
-          </p>
-          <div class="menu-filters" id="menuFilters">
-            <button class="menu-filter active" data-category="all">All</button>
-            <button class="menu-filter" data-category="sandwich">
-              Sandwich
-            </button>
-            <button class="menu-filter" data-category="burger">Burger</button>
-            <button class="menu-filter" data-category="pizza">Pizza</button>
-            <button class="menu-filter" data-category="pasta">Pasta</button>
-            <button class="menu-filter" data-category="indian">Indian</button>
-            <button class="menu-filter" data-category="chinese">Chinese</button>
-            <button class="menu-filter" data-category="beverages">
-              Beverages
-            </button>
-            <button class="menu-filter" data-category="desserts">
-              Desserts
-            </button>
-            <button class="menu-filter" data-category="shakes">Shakes</button>
-          </div>
-          <div class="menu-grid" id="menuGrid"></div>
-          <div class="view-menu-wrap">
-            <button
-              class="btn-primary"
-              onclick="alert('Full menu available on our Zomato/Swiggy pages.')"
-            >
-              <span>View Full Menu</span>
-            </button>
-          </div>
-        </div>
-      </section>
-    </div>
+     PAGE: GALLERY
+     ============================================================ -->
 
-    <!-- ============================================================
-    PAGE: GALLERY
-    ============================================================ -->
     <div class="page" id="page-gallery">
-      <section class="section gallery-section" style="padding-top: 40px">
+      <section class="section gallery-full-section">
         <div class="container">
-          <span class="section-label">✦ Gallery</span>
-          <h2 class="section-title">Visual <span>Storytelling</span></h2>
-          <p class="section-desc">
-            A glimpse into the artistry, ambiance, and emotion of HESTIIA.
-          </p>
-          <div class="gallery-grid" id="galleryGrid">
-            <div class="item">
+          <div class="gallery-page-header">
+            <span class="section-label"> ✦ HESTIIA Gallery </span>
+
+            <h2 class="section-title">The Art of <span>Ambience</span></h2>
+
+            <p class="section-desc">
+              Explore the elegance, atmosphere and beautiful dining spaces of
+              HESTIIA.
+            </p>
+          </div>
+
+          <div class="gallery-full-grid">
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
-                alt="Dining"
+                src="images/Hall.jpeg"
+                alt="HESTIIA Dining Hall"
                 loading="lazy"
               />
-              <div class="overlay"><span>Ambiance</span></div>
             </div>
-            <div class="item">
+
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=600&q=80"
-                alt="Plating"
+                src="images/counter.jpeg"
+                alt="HESTIIA Counter"
                 loading="lazy"
               />
-              <div class="overlay"><span>Plating</span></div>
             </div>
-            <div class="item">
+
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80"
-                alt="Lobster"
+                src="images/image 7.webp"
+                alt="HESTIIA Interior"
                 loading="lazy"
               />
-              <div class="overlay"><span>Lobster</span></div>
             </div>
-            <div class="item">
+
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1559339352-11d8e70e4b5d?w=600&q=80"
-                alt="Wine"
+                src="images/image 8.webp"
+                alt="HESTIIA Ambience"
                 loading="lazy"
               />
-              <div class="overlay"><span>Wine</span></div>
             </div>
-            <div class="item">
+
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80"
-                alt="Wagyu"
+                src="images/image 6.webp"
+                alt="HESTIIA Restaurant"
                 loading="lazy"
               />
-              <div class="overlay"><span>Wagyu</span></div>
             </div>
-            <div class="item">
+
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80"
-                alt="Risotto"
+                src="images/image 5.webp"
+                alt="HESTIIA Dining"
                 loading="lazy"
               />
-              <div class="overlay"><span>Risotto</span></div>
             </div>
-            <div class="item">
+
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=600&q=80"
-                alt="Chef"
+                src="images/image 4.webp"
+                alt="HESTIIA Ambience"
                 loading="lazy"
               />
-              <div class="overlay"><span>Chef</span></div>
             </div>
-            <div class="item">
+
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1559339352-11d8e70e4b5d?w=600&q=80"
-                alt="Wine Cellar"
+                src="images/image 3.webp"
+                alt="HESTIIA Interior"
                 loading="lazy"
               />
-              <div class="overlay"><span>Wine Cellar</span></div>
             </div>
-            <div class="item">
+
+            <div class="gallery-full-item">
               <img
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80"
-                alt="Event"
+                src="images/image 2.webp"
+                alt="HESTIIA Dining Space"
                 loading="lazy"
               />
-              <div class="overlay"><span>Events</span></div>
+            </div>
+
+            <div class="gallery-full-item">
+              <img
+                src="images/image 1.webp"
+                alt="HESTIIA Restaurant"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -1336,7 +1489,7 @@
       </section>
     </div>
 
-    PAGE: CONTACT ============================================================
+    <!-- PAGE: CONTACT ============================================================
     -->
     <div class="page" id="page-contact">
       <section class="section contact-section" style="padding-top: 40px">
@@ -1425,7 +1578,8 @@
                   Instagram</a
                 >
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=100090424925903"
+                  target="_blank"
                   class="btn-secondary"
                   style="
                     padding: 10px 28px;
@@ -1437,7 +1591,7 @@
                   Facebook</a
                 >
                 <a
-                  href="#"
+                  href=""
                   class="btn-secondary"
                   style="
                     padding: 10px 28px;
@@ -1445,7 +1599,7 @@
                     border-color: var(--accent);
                     color: var(--accent);
                   "
-                  ><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a
+                  ><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a
                 >
               </div>
             </div>
@@ -1458,7 +1612,10 @@
     PAGE: RESERVATION
     ============================================================ -->
     <div class="page" id="page-reservation">
-      <section class="section reservation-section" style="padding-top: 40px">
+      <section
+        class="section reservation-section"
+        style="padding-top: 40px; background-color: whitesmoke"
+      >
         <div class="container">
           <div style="text-align: center; margin-bottom: 40px">
             <span class="section-label">✦ Reserve</span>
@@ -1691,21 +1848,63 @@
             aria-label="Instagram"
             ><i class="fab fa-instagram" aria-hidden="true"></i
           ></a>
-          <a href="#" aria-label="Facebook"
+          <a
+            href="https://www.facebook.com/profile.php?id=100090424925903"
+            target="_blank"
+            aria-label="Facebook"
             ><i class="fab fa-facebook-f" aria-hidden="true"></i
           ></a>
-          <a href="#" aria-label="YouTube"
-            ><i class="fab fa-youtube" aria-hidden="true"></i
-          ></a>
-          <a href="#" aria-label="Twitter"
+          <a
+            href="https://twitter.com/hestiiarestaurant"
+            target="_blank"
+            aria-label="Twitter"
             ><i class="fab fa-x-twitter" aria-hidden="true"></i
           ></a>
         </div>
       </div>
     </footer>
+    <!-- ============================================================
+     HESTIIA — GALLERY LIGHTBOX
+     ============================================================ -->
+
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+      <button
+        class="gallery-lightbox-close"
+        type="button"
+        onclick="closeGalleryLightbox()"
+        aria-label="Close gallery"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+
+      <button
+        class="gallery-lightbox-prev"
+        type="button"
+        onclick="galleryPrevious()"
+        aria-label="Previous image"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <div class="gallery-lightbox-content">
+        <img id="galleryLightboxImage" src="" alt="HESTIIA Gallery" />
+      </div>
+
+      <button
+        class="gallery-lightbox-next"
+        type="button"
+        onclick="galleryNext()"
+        aria-label="Next image"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <div class="gallery-lightbox-counter" id="galleryLightboxCounter">
+        01 / 10
+      </div>
+    </div>
 
     <!-- ===== Custom JavaScript ===== -->
-         <script async src="https://www.instagram.com/embed.js"></script>
 
     <script src="script.js"></script>
   </body>
